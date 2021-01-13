@@ -32,7 +32,7 @@
 				  		// $mydb->setQuery("SELECT * 
 								// 			FROM  `tblusers` WHERE TYPE != 'Customer'");
 				  		$mydb->setQuery("SELECT * 
-											FROM  `tbluseraccount`");
+											FROM  `admin`");
 				  		$cur = $mydb->loadResultList();
 
 						foreach ($cur as $result) {

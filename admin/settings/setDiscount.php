@@ -6,7 +6,7 @@ require_once("../../include/initialize.php");
 
  
  $PROID =   $_GET['id']; 
-$query = "SELECT * FROM `tblproduct` p  ,`tblcategory` c ,`tblpromopro` pr
+$query = "SELECT * FROM `produit` p  ,`categorie` c ,`promo` pr
             WHERE   p.`CATEGID`=c.`CATEGID` AND p.`PROID`=pr.`PROID` AND p.`PROID`=" . $PROID;
             $mydb->setQuery($query);
             $cur = $mydb->loadResultList();

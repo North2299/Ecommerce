@@ -16,14 +16,14 @@
             <h2 class="title text-center">Products</h2>
               <?php
              if(isset($_POST['search'])) { 
-                $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
+                $query = "SELECT * FROM `promo` pr , `produit` p , `categorie` c
                           WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 
                 AND ( `CATEGORIES` LIKE '%{$_POST['search']}%' OR `PRODESC` LIKE '%{$_POST['search']}%' or `PROQTY` LIKE '%{$_POST['search']}%' or `PROPRICE` LIKE '%{$_POST['search']}%')";
               }elseif(isset($_GET['category'])){
-                $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
+                $query = "SELECT * FROM `promo` pr , `produit` p , `categorie` c
                           WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 AND CATEGORIES='{$_GET['category']}'";
               }else{
-                $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
+                $query = "SELECT * FROM `promo` pr , `produit` p , `categorie` c
                           WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 ";
               }
 

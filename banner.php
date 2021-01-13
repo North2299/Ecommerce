@@ -1,6 +1,6 @@
 <?php
 
-  $query="SELECT count(IMAGES) as 'counts'  FROM `tblpromopro` pr , `tblproduct` p  
+  $query="SELECT count(IMAGES) as 'counts'  FROM `promo` pr , `produit` p  
   WHERE pr.`PROID`=p.`PROID` and `PROBANNER`=1";
   $mydb->setQuery($query);
   $cur = $mydb->loadResultList(); 

@@ -163,20 +163,20 @@ INSERT INTO `tblautonumber` (`ID`, `AUTOSTART`, `AUTOINC`, `AUTOEND`, `AUTOKEY`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblcategory`
+-- Table structure for table `categorie`
 --
 
-CREATE TABLE `tblcategory` (
+CREATE TABLE `categorie` (
   `CATEGID` int(11) NOT NULL,
   `CATEGORIES` varchar(255) NOT NULL,
   `USERID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblcategory`
+-- Dumping data for table `categorie`
 --
 
-INSERT INTO `tblcategory` (`CATEGID`, `CATEGORIES`, `USERID`) VALUES
+INSERT INTO `categorie` (`CATEGID`, `CATEGORIES`, `USERID`) VALUES
 (5, 'SHOES', 0),
 (11, 'BAGS', 0),
 (12, 'CLOTHING', 0),
@@ -235,10 +235,10 @@ INSERT INTO `tblcustomer` (`CUSTOMERID`, `FNAME`, `LNAME`, `MNAME`, `CUSHOMENUM`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblorder`
+-- Table structure for table `lignecommande`
 --
 
-CREATE TABLE `tblorder` (
+CREATE TABLE `lignecommande` (
   `ORDERID` int(11) NOT NULL,
   `PROID` int(11) NOT NULL,
   `ORDEREDQTY` int(11) NOT NULL,
@@ -248,10 +248,10 @@ CREATE TABLE `tblorder` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblorder`
+-- Dumping data for table `lignecommande`
 --
 
-INSERT INTO `tblorder` (`ORDERID`, `PROID`, `ORDEREDQTY`, `ORDEREDPRICE`, `ORDEREDNUM`, `USERID`) VALUES
+INSERT INTO `lignecommande` (`ORDERID`, `PROID`, `ORDEREDQTY`, `ORDEREDPRICE`, `ORDEREDNUM`, `USERID`) VALUES
 (1, 201737, 4, 476, 93, 0),
 (2, 201740, 3, 447, 93, 0),
 (3, 201738, 1, 199, 94, 0);
@@ -259,10 +259,10 @@ INSERT INTO `tblorder` (`ORDERID`, `PROID`, `ORDEREDQTY`, `ORDEREDPRICE`, `ORDER
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblproduct`
+-- Table structure for table `produit`
 --
 
-CREATE TABLE `tblproduct` (
+CREATE TABLE `produit` (
   `PROID` int(11) NOT NULL,
   `PRODESC` varchar(255) DEFAULT NULL,
   `INGREDIENTS` varchar(255) NOT NULL,
@@ -277,10 +277,10 @@ CREATE TABLE `tblproduct` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblproduct`
+-- Dumping data for table `produit`
 --
 
-INSERT INTO `tblproduct` (`PROID`, `PRODESC`, `INGREDIENTS`, `PROQTY`, `ORIGINALPRICE`, `PROPRICE`, `CATEGID`, `IMAGES`, `PROSTATS`, `OWNERNAME`, `OWNERPHONE`) VALUES
+INSERT INTO `produit` (`PROID`, `PRODESC`, `INGREDIENTS`, `PROQTY`, `ORIGINALPRICE`, `PROPRICE`, `CATEGID`, `IMAGES`, `PROSTATS`, `OWNERNAME`, `OWNERPHONE`) VALUES
 (201737, 'KILY Korean Casual Sleeveless Dress Printed Dress 5a0019                      ', '', 5, 100, 119, 12, 'uploaded_photos/korean.jpeg', 'Available', 'janobe', ''),
 (201738, 'terno top and pants korean fashion boho terno summer terno for women  ', '', 3, 150, 199, 12, 'uploaded_photos/terno.jpg', 'Available', 'janobe', ''),
 (201739, '4Color Menâ€²S Denim Pants STRETCHABLE Skinny Black/Blue', '', 5, 250, 289, 18, 'uploaded_photos/jeans.jpg', 'Available', 'janobe', ''),
@@ -291,10 +291,10 @@ INSERT INTO `tblproduct` (`PROID`, `PRODESC`, `INGREDIENTS`, `PROQTY`, `ORIGINAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblpromopro`
+-- Table structure for table `promo`
 --
 
-CREATE TABLE `tblpromopro` (
+CREATE TABLE `promo` (
   `PROMOID` int(11) NOT NULL,
   `PROID` int(11) NOT NULL,
   `PRODISCOUNT` double NOT NULL,
@@ -304,10 +304,10 @@ CREATE TABLE `tblpromopro` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblpromopro`
+-- Dumping data for table `promo`
 --
 
-INSERT INTO `tblpromopro` (`PROMOID`, `PROID`, `PRODISCOUNT`, `PRODISPRICE`, `PROBANNER`, `PRONEW`) VALUES
+INSERT INTO `promo` (`PROMOID`, `PROID`, `PRODISCOUNT`, `PRODISPRICE`, `PROBANNER`, `PRONEW`) VALUES
 (1, 201737, 0, 119, 0, 0),
 (2, 201738, 0, 199, 0, 0),
 (3, 201739, 0, 289, 0, 0),
@@ -383,10 +383,10 @@ INSERT INTO `tblsummary` (`SUMMARYID`, `ORDEREDDATE`, `CUSTOMERID`, `ORDEREDNUM`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbluseraccount`
+-- Table structure for table `admin`
 --
 
-CREATE TABLE `tbluseraccount` (
+CREATE TABLE `admin` (
   `USERID` int(11) NOT NULL,
   `U_NAME` varchar(122) NOT NULL,
   `U_USERNAME` varchar(122) NOT NULL,
@@ -396,10 +396,10 @@ CREATE TABLE `tbluseraccount` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbluseraccount`
+-- Dumping data for table `admin`
 --
 
-INSERT INTO `tbluseraccount` (`USERID`, `U_NAME`, `U_USERNAME`, `U_PASS`, `U_ROLE`, `USERIMAGE`) VALUES
+INSERT INTO `admin` (`USERID`, `U_NAME`, `U_USERNAME`, `U_PASS`, `U_ROLE`, `USERIMAGE`) VALUES
 (124, 'Kenjie Palacios', 'kenjie', '4752fe635442d048e8e8d2d1d845e6a578f30470', 'Administrator', 'photos/COC-war-base-design.jpg'),
 (126, 'Janobe Palacios', 'janobe', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrator', 'photos/10329236_874204835938922_6636897990257224477_n.jpg'),
 (127, 'Craig Palacios', 'craig', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrator', '');
@@ -456,9 +456,9 @@ ALTER TABLE `tblautonumber`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `tblcategory`
+-- Indexes for table `categorie`
 --
-ALTER TABLE `tblcategory`
+ALTER TABLE `categorie`
   ADD PRIMARY KEY (`CATEGID`);
 
 --
@@ -468,25 +468,25 @@ ALTER TABLE `tblcustomer`
   ADD PRIMARY KEY (`CUSTOMERID`);
 
 --
--- Indexes for table `tblorder`
+-- Indexes for table `lignecommande`
 --
-ALTER TABLE `tblorder`
+ALTER TABLE `lignecommande`
   ADD PRIMARY KEY (`ORDERID`),
   ADD KEY `USERID` (`USERID`),
   ADD KEY `PROID` (`PROID`),
   ADD KEY `ORDEREDNUM` (`ORDEREDNUM`);
 
 --
--- Indexes for table `tblproduct`
+-- Indexes for table `produit`
 --
-ALTER TABLE `tblproduct`
+ALTER TABLE `produit`
   ADD PRIMARY KEY (`PROID`),
   ADD KEY `CATEGID` (`CATEGID`);
 
 --
--- Indexes for table `tblpromopro`
+-- Indexes for table `promo`
 --
-ALTER TABLE `tblpromopro`
+ALTER TABLE `promo`
   ADD PRIMARY KEY (`PROMOID`),
   ADD UNIQUE KEY `PROID` (`PROID`);
 
@@ -514,9 +514,9 @@ ALTER TABLE `tblsummary`
   ADD KEY `USERID` (`USERID`);
 
 --
--- Indexes for table `tbluseraccount`
+-- Indexes for table `admin`
 --
-ALTER TABLE `tbluseraccount`
+ALTER TABLE `admin`
   ADD PRIMARY KEY (`USERID`);
 
 --
@@ -554,9 +554,9 @@ ALTER TABLE `tblautonumber`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `tblcategory`
+-- AUTO_INCREMENT for table `categorie`
 --
-ALTER TABLE `tblcategory`
+ALTER TABLE `categorie`
   MODIFY `CATEGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
@@ -566,15 +566,15 @@ ALTER TABLE `tblcustomer`
   MODIFY `CUSTOMERID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `tblorder`
+-- AUTO_INCREMENT for table `lignecommande`
 --
-ALTER TABLE `tblorder`
+ALTER TABLE `lignecommande`
   MODIFY `ORDERID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tblpromopro`
+-- AUTO_INCREMENT for table `promo`
 --
-ALTER TABLE `tblpromopro`
+ALTER TABLE `promo`
   MODIFY `PROMOID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
@@ -596,9 +596,9 @@ ALTER TABLE `tblsummary`
   MODIFY `SUMMARYID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tbluseraccount`
+-- AUTO_INCREMENT for table `admin`
 --
-ALTER TABLE `tbluseraccount`
+ALTER TABLE `admin`
   MODIFY `USERID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
 
 --

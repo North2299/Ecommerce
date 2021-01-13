@@ -1,7 +1,7 @@
 <?php
 require_once(LIB_PATH.DS.'database.php');
 class Category {
-	protected static  $tblname = "tblcategory";
+	protected static  $tblname = "categorie";
 
 	function dbfields () {
 		global $mydb;

@@ -148,13 +148,13 @@ if(isset($_POST['submit'])){
  // echo date_format(date_create($_POST['date_pickerfrom']),'Y-m-d');
 // echo $_POST['txtSearch'];
 // $query = "SELECT  *  FROM  `tblcustomer` c,  `tblsummary` s WHERE  c.`CUSTOMERID` = s.`CUSTOMERID` AND  ORDEREDSTATS='Confirmed' AND date(ORDEREDDATE)>='". date_format(date_create($_POST['date_pickerfrom']), "Y-m-d")."' AND date(ORDEREDDATE) <='". date_format(date_create($_POST['date_pickerto']), "Y-m-d")."'";
-// $query="SELECT *,SUM(ORDEREDQTY) as 'QTY'  FROM `tblproduct` P  ,`tblpromopro` PR ,`tblorder` O, `tblsummary` S ,`tblcustomer` C 
+// $query="SELECT *,SUM(ORDEREDQTY) as 'QTY'  FROM `produit` P  ,`promo` PR ,`lignecommande` O, `tblsummary` S ,`tblcustomer` C 
 // WHERE P.`PROID`=PR.`PROID` AND PR.`PROID`=O.`PROID` AND O.`ORDEREDNUM`=S.`ORDEREDNUM` AND S.`CUSTOMERID`=C.`CUSTOMERID`  
 // AND CONCAT(`PRODESC`, ' ' ,O.`ORDEREDNUM`, ' ' ,`FNAME`,' ', `LNAME`, ' ',`MNAME`) LIKE '%{$_POST['txtSearch']}%' AND DATE(ORDEREDDATE) >= '". date_format(date_create($_POST['date_pickerfrom']),'Y-m-d')."' 
 // AND DATE(ORDEREDDATE) <= '". date_format(date_create($_POST['date_pickerto']),'Y-m-d')."' GROUP BY `PRODESC`
 // ";
 
-$query="SELECT *,SUM(ORDEREDQTY) as 'QTY'  FROM `tblproduct` P  ,`tblpromopro` PR ,`tblorder` O, `tblsummary` S ,`tblcustomer` C 
+$query="SELECT *,SUM(ORDEREDQTY) as 'QTY'  FROM `produit` P  ,`promo` PR ,`lignecommande` O, `tblsummary` S ,`tblcustomer` C 
 WHERE P.`PROID`=PR.`PROID` AND PR.`PROID`=O.`PROID` AND O.`ORDEREDNUM`=S.`ORDEREDNUM` AND S.`CUSTOMERID`=C.`CUSTOMERID`  
 AND  DATE(ORDEREDDATE) >= '". date_format(date_create($_POST['date_pickerfrom']),'Y-m-d')."' 
 AND DATE(ORDEREDDATE) <= '". date_format(date_create($_POST['date_pickerto']),'Y-m-d')."' GROUP BY `PRODESC`

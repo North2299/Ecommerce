@@ -76,7 +76,7 @@
                           echo  '<option SELECTED  value='.$singlecategory->CATEGID.' >'.$singlecategory->CATEGORIES.'</option>';
 
 
-                          $mydb->setQuery("SELECT * FROM `tblcategory` where CATEGID <> '".$singlecategory->CATEGID."'");
+                          $mydb->setQuery("SELECT * FROM `categorie` where CATEGID <> '".$singlecategory->CATEGID."'");
                           $cur = $mydb->loadResultList();
                         foreach ($cur as $result) {
                           echo  '<option  value='.$result->CATEGID.' >'.$result->CATEGORIES.'</option>';

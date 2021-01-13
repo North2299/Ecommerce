@@ -14,7 +14,7 @@ if (isset($_POST['updateid'])){
        $price=(double)(isset($_GET['subTOT'.$pid]) ? $_GET['subTOT'.$_POST['updateid']] : "");
 
 
-       $sql = "SELECT * FROM `tblproducts` WHERE `PRODUCTID` ='" . $pid. "'";
+       $sql = "SELECT * FROM `produits` WHERE `PRODUCTID` ='" . $pid. "'";
        $result = mysql_query($sql) or die(mysql_error());
        while ($row = mysql_fetch_array($result)) {
         # code...
@@ -91,7 +91,7 @@ if (isset($_POST['updateid'])){
                 echo '<script>totalprice();</script>';
                     $count_cart = count($_SESSION['fixnmix_cart']);
                     for ($i=0; $i < $count_cart  ; $i++) { 
-                    $query = "SELECT * FROM `tblproducts` p , `tblcategory` c 
+                    $query = "SELECT * FROM `produits` p , `categorie` c 
                       WHERE  p.`CATEGORYID`=c.`CATEGORYID` and PRODUCTID='".$_SESSION['fixnmix_cart'][$i]['productid']."'";
                       $mydb->setQuery($query);
                       $cur = $mydb->loadResultList();

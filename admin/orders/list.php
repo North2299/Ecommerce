@@ -35,7 +35,7 @@
 			   		</thead>
 			   		<tbody>
 					<?php 
-				  		$query = "SELECT * FROM `tblsummary` s ,`tblcustomer` c 
+				  		$query = "SELECT * FROM `tblsummary` s ,`client` c 
 				  				WHERE   s.`CUSTOMERID`=c.`CUSTOMERID` ORDER BY   `ORDEREDNUM` desc ";
 				  		$mydb->setQuery($query);
 				  		$cur = $mydb->loadResultList();

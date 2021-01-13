@@ -3,7 +3,7 @@
             <div class="panel-group category-products" id="accordian"><!--category-productsr-->
  
                  <?php 
-                      $mydb->setQuery("SELECT * FROM `tblcategory`");
+                      $mydb->setQuery("SELECT * FROM `categorie`");
                       $cur = $mydb->loadResultList();
                      foreach ($cur as $result) {
                       echo ' <div class="categ panel panel-default">

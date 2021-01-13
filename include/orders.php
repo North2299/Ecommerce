@@ -1,7 +1,7 @@
 <?php
 require_once(LIB_PATH.DS.'database.php');
 class Order {
-	protected static  $tblname = "tblorder";
+	protected static  $tblname = "lignecommande";
 
 	function dbfields () {
 		global $mydb;

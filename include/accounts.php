@@ -1,7 +1,7 @@
 <?php
 require_once(LIB_PATH.DS.'database.php');
 class User {
-	protected static  $tblname = "tbluseraccount";
+	protected static  $tblname = "admin";
 
 	function dbfields () {
 		global $mydb;
@@ -23,7 +23,7 @@ class User {
 	}
 	static function userAuthentication($U_USERNAME,$h_pass){
 		global $mydb;
-		$mydb->setQuery("SELECT * FROM `tbluseraccount` WHERE `U_USERNAME` = '". $U_USERNAME ."' and `U_PASS` = '". $h_pass ."'");
+		$mydb->setQuery("SELECT * FROM `admin` WHERE `U_USERNAME` = '". $U_USERNAME ."' and `U_PASS` = '". $h_pass ."'");
 		$cur = $mydb->executeQuery();
 		if($cur==false){
 			die(mysql_error());

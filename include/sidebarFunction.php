@@ -1,6 +1,6 @@
 <?php 
 function get_categories(){
-	$mydb->setQuery("SELECT * FROM `tblcategory`");
+	$mydb->setQuery("SELECT * FROM `categorie`");
 	$cur = $mydb->loadResultList();
 
 	foreach ($cur as $result) {

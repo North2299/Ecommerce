@@ -48,7 +48,7 @@ check_message();
                                      // echo 'for id :'. $_SESSION['cart'][$i]['productid'] ;
                                      //  echo 'for qty'.  $_SESSION['cart'][$i]['qty'].'<br/>';
 
-                                       $query = "SELECT * FROM tblproducts p, tblcategory o 
+                                       $query = "SELECT * FROM produits p, categorie o 
                                       WHERE o.`CATEGORYID`=p.`CATEGORYID` and `PRODUCTID` = '".$_SESSION['fixnmix_cart'][$i]['productid']."'";
                                        $mydb->setQuery($query);
                                          $cur = $mydb->loadResultList();

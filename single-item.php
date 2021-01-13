@@ -1,6 +1,6 @@
 <?php 
  $PROID =   $_GET['id']; 
-$query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
+$query = "SELECT * FROM `promo` pr , `produit` p , `categorie` c
             WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND p.`PROID`=" . $PROID;
             $mydb->setQuery($query);
             $cur = $mydb->loadResultList();
@@ -58,7 +58,7 @@ $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
 </form>
 
 <?php 
-$query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
+$query = "SELECT * FROM `promo` pr , `produit` p , `categorie` c
             WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND `CATEGORIES`='" . $result->CATEGORIES . "' limit 4";
             $mydb->setQuery($query);
             $cur = $mydb->loadResultList(); 

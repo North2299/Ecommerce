@@ -14,7 +14,7 @@ require_once("include/initialize.php");
    
 
        // $PROID =   $_POST['id']; 
-       $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
+       $query = "SELECT * FROM `promo` pr , `produit` p , `categorie` c
             WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND p.`PROID`=" . $_SESSION['PROID'] ;
         $mydb->setQuery($query);
         $cur = $mydb->loadSingleResult();

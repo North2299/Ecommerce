@@ -72,7 +72,7 @@ $singlecustomer = $customer->single_customer($customerid);
                       $count_cart = @count($_SESSION['gcCart']);
                       for ($i=0; $i < $count_cart  ; $i++) { 
 
-                      $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
+                      $query = "SELECT * FROM `promo` pr , `produit` p , `categorie` c
                            WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  and p.PROID='".$_SESSION['gcCart'][$i]['productid']."'";
                         $mydb->setQuery($query);
                         $cur = $mydb->loadResultList();

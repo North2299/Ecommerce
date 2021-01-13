@@ -150,7 +150,7 @@ function doInsert(){
 			// $customer = New customer;
   	// 		$res = $customer->single_customer($_GET['customerid']); 
 
-  			$query = "SELECT * FROM `tblsummary` s ,`tblcustomer` c 
+  			$query = "SELECT * FROM `tblsummary` s ,`client` c 
 				WHERE   s.`CUSTOMERID`=c.`CUSTOMERID` and ORDEREDNUM=".$_GET['id'];
 			$mydb->setQuery($query);
 			$cur = $mydb->loadSingleResult();
@@ -163,7 +163,7 @@ function doInsert(){
 
 
 			$query = "SELECT * 
-				FROM  `tblproduct` p,`tblorder` o,  `tblsummary` s
+				FROM  `produit` p,`lignecommande` o,  `tblsummary` s
 				WHERE  p.`PROID` = o.`PROID` 
 				AND o.`ORDEREDNUM` = s.`ORDEREDNUM`  
 				AND o.`ORDEREDNUM`=".$_GET['id'];

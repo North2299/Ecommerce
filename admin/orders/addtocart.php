@@ -11,7 +11,7 @@
     <?php  
     if (isset($_POST['product_id'])){//add to cart
 
-    $query = "SELECT * FROM `tblproducts` p  ,`tblcategory` c 
+    $query = "SELECT * FROM `produits` p  ,`categorie` c 
           WHERE   p.`CATEGORYID`=c.`CATEGORYID` and PRODUCTID='".$_POST['product_id']."'";
       $mydb->setQuery($query);
        $cur = $mydb->loadSingleResult();
@@ -87,7 +87,7 @@ if(isset($_GET['id'])) { //remove to cart
                             if (!empty($_SESSION['fixnmix_cart'])){ 
                                   $count_cart = count($_SESSION['fixnmix_cart']);
                                   for ($i=0; $i < $count_cart  ; $i++) { 
-                                  $query = "SELECT * FROM `tblproducts` p , `tblcategory` c 
+                                  $query = "SELECT * FROM `produits` p , `categorie` c 
                                     WHERE  p.`CATEGORYID`=c.`CATEGORYID` and PRODUCTID='".$_SESSION['fixnmix_cart'][$i]['productid']."'";
                                     $mydb->setQuery($query);
                                     $cur = $mydb->loadResultList();

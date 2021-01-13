@@ -5,7 +5,7 @@
     $price= $_POST['PROPRICE'];
 
 
-    $sql = "SELECT * FROM `tblproduct` WHERE `PROID` ='" . $pid. "'";
+    $sql = "SELECT * FROM `produit` WHERE `PROID` ='" . $pid. "'";
        $result = mysql_query($sql) or die(mysql_error());
        while ($row = mysql_fetch_array($result)) {
         
@@ -66,7 +66,7 @@
                                      // echo 'for id :'. $_SESSION['cart'][$i]['productid'] ;
                                      //  echo 'for qty'.  $_SESSION['cart'][$i]['qty'].'<br/>';
 
-                                       $query = "SELECT * FROM tblproducts p, tblcategory o 
+                                       $query = "SELECT * FROM produits p, categorie o 
                                       WHERE o.`CATEGORYID`=p.`CATEGORYID` and `PRODUCTID` = '".$_SESSION['fixnmix_cart'][$i]['productid']."'";
                                        $mydb->setQuery($query);
                                          $cur = $mydb->loadResultList();

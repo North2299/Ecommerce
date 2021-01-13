@@ -24,7 +24,7 @@
 				  </thead> 
 				  <tbody>
 				  	<?php 
-				  		$mydb->setQuery("SELECT * FROM `tblcategory`");
+				  		$mydb->setQuery("SELECT * FROM `categorie`");
 				  		$cur = $mydb->loadResultList();
 
 						foreach ($cur as $result) {

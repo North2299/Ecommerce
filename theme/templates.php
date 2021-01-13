@@ -112,7 +112,7 @@ if (isset($_SESSION['gcCart'])){
                 <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                        <?php 
-                                            $mydb->setQuery("SELECT * FROM `tblcategory`");
+                                            $mydb->setQuery("SELECT * FROM `categorie`");
                                             $cur = $mydb->loadResultList();
                                            foreach ($cur as $result) { 
                                        echo '<li><a href="index.php?q=product&category='.$result->CATEGORIES.'" >'.$result->CATEGORIES.'</a></li>';
@@ -209,7 +209,7 @@ if (isset($_SESSION['gcCart'])){
               <h2>Quick Shop</h2>
               <ul class="nav nav-pills nav-stacked">
                  <?php 
-                      $mydb->setQuery("SELECT * FROM `tblcategory` LIMIT 6");
+                      $mydb->setQuery("SELECT * FROM `categorie` LIMIT 6");
                       $cur = $mydb->loadResultList();
                      foreach ($cur as $result) {
                       echo '<li><a href="index.php?q=product&category='.$result->CATEGORIES.'" >'.$result->CATEGORIES.'</a></li>';

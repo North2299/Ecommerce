@@ -1,7 +1,7 @@
 <?php
 require_once(LIB_PATH.DS.'database.php');
 class Promo {
-	protected static  $tblname = "tblpromopro";
+	protected static  $tblname = "promo";
 
 	function dbfields () {
 		global $mydb;

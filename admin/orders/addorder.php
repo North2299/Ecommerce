@@ -21,7 +21,7 @@
               </thead> 
               <tbody>
                 <?php  
-                  $query = "SELECT * FROM `tblproducts` p  ,`tblcategory` c 
+                  $query = "SELECT * FROM `produits` p  ,`categorie` c 
                         WHERE   p.`CATEGORYID`=c.`CATEGORYID` and STATUS='Available'";
                     $mydb->setQuery($query);
                     $cur = $mydb->loadResultList();

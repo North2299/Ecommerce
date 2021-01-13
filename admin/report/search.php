@@ -45,7 +45,7 @@ if(isset($_POST['submit'])){
 	$_SESSION['start']=$_POST['start'];
 	$_SESSION['end']=$_POST['end'];	
 //  SELECT GROUP( CONCAT( PRONAME, PRODESC ), '' )
-// FROM  `tblcustomer` c,  `tblsummary` s, tblproduct p, tblorder o
+// FROM  `tblcustomer` c,  `tblsummary` s, produit p, lignecommande o
 // WHERE p.`PROID` = o.`PROID` 
 // AND s.`ORDEREDNUM` = o.`ORDEREDNUM` 
 // AND c.`CUSTOMERID` = s.`CUSTOMERID` 

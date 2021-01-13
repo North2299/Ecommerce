@@ -33,7 +33,7 @@ switch ($action) {
     $price= $_POST['PROPRICE'];
 
 
-    $sql = "SELECT * FROM `tblproduct` WHERE `PROID` ='" . $pid. "'";
+    $sql = "SELECT * FROM `produit` WHERE `PROID` ='" . $pid. "'";
     $mydb->setQuery($sql);
     $result = $mydb->loadResultList();
 
@@ -67,7 +67,7 @@ switch ($action) {
        $qty=intval(isset($_GET['QTY'.$pid]) ? $_GET['QTY'.$_POST['UPPROID']] : "");
        $price=(double)(isset($_GET['TOT'.$pid]) ? $_GET['TOT'.$_POST['UPPROID']] : "");
  
-       $sql = "SELECT * FROM `tblproduct` WHERE `PROID` =" . $pid;
+       $sql = "SELECT * FROM `produit` WHERE `PROID` =" . $pid;
        $mydb->setQuery($sql);
 	    $result = $mydb->loadResultList();
 

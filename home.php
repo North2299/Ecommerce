@@ -76,7 +76,7 @@
 
             <?php
 
-            $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
+            $query = "SELECT * FROM `promo` pr , `produit` p , `categorie` c
             WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 ";
             $mydb->setQuery($query);
             $cur = $mydb->loadResultList();
@@ -138,7 +138,7 @@
               <div class="carousel-inner">
                 <div class="item active"> 
                          <?php 
-                    $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
+                    $query = "SELECT * FROM `promo` pr , `produit` p , `categorie` c
                     WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 limit 3 ";
                     $mydb->setQuery($query);
                     $cur = $mydb->loadResultList();
@@ -168,7 +168,7 @@
                 </div>
                 <div class="item">  
                   <?php 
-                    $query = "SELECT * FROM `tblpromopro` pr , `tblproduct` p , `tblcategory` c
+                    $query = "SELECT * FROM `promo` pr , `produit` p , `categorie` c
                     WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND PROQTY>0 limit 3,6";
                     $mydb->setQuery($query);
                     $cur = $mydb->loadResultList();

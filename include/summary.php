@@ -3,7 +3,7 @@ require_once(LIB_PATH.DS.'database.php');
 class Summary {
 	protected static  $tblname = "tblsummary";
 
-	function dbfields () {
+	function dbfields() {
 		global $mydb;
 		return $mydb->getfieldsononetable(self::$tblname);
 
