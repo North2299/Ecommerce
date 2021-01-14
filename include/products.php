@@ -43,14 +43,14 @@ class Product {
 		global $mydb;
 		$mydb->setQuery("UPDATE  ".self::$tblname." 
 			SET PROQTY=PROQTY - ".$value." WHERE PROID = '{$id}'");
-		$cur = $mydb->executeQuery();
+		$cur = $mydb->execute();
 	}
 
 	function qtyplus($id='',$value=0){
 		global $mydb;
 		$mydb->setQuery("UPDATE  ".self::$tblname." 
 			SET PROQTY=PROQTY + ".$value." WHERE PROID = '{$id}'");
-		$cur = $mydb->executeQuery();
+		$cur = $mydb->execute();
 
 	}
 	/*---Instantiation of Object dynamically---*/
@@ -117,7 +117,7 @@ class Product {
 		$sql .= "')";
 	echo $mydb->setQuery($sql);
 	
-	 if($mydb->executeQuery()) {
+	 if($mydb->execute()) {
 	    $this->id = $mydb->insert_id();
 	    return true;
 	  } else {
@@ -136,7 +136,7 @@ class Product {
 		$sql .= join(", ", $attribute_pairs);
 		$sql .= " WHERE PROID=". $id;
 	  $mydb->setQuery($sql);
-	 	if(!$mydb->executeQuery()) return false; 	
+	 	if(!$mydb->execute()) return false; 	
 		
 	}
 
@@ -147,7 +147,7 @@ class Product {
 		  $sql .= " LIMIT 1 ";
 		  $mydb->setQuery($sql);
 		  
-			if(!$mydb->executeQuery()) return false; 	
+			if(!$mydb->execute()) return false; 	
 	
 	}	
 

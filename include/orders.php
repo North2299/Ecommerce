@@ -85,7 +85,7 @@ class Order {
 		$sql .= "')";
 	echo $mydb->setQuery($sql);
 	
-	 if($mydb->executeQuery()) {
+	 if($mydb->execute()) {
 	    $this->id = $mydb->insert_id();
 	    return true;
 	  } else {
@@ -119,7 +119,7 @@ class Order {
 		$sql .= join(", ", $attribute_pairs);
 		$sql .= " WHERE ORDERID=". $id;
 	  $mydb->setQuery($sql);
-	 	if(!$mydb->executeQuery()) return false; 	
+	 	if(!$mydb->execute()) return false; 	
 		
 	}
 
@@ -130,7 +130,7 @@ class Order {
 		  $sql .= " LIMIT 1 ";
 		  $mydb->setQuery($sql);
 		  
-			if(!$mydb->executeQuery()) return false; 	
+			if(!$mydb->execute()) return false; 	
 	
 	}	
 
@@ -141,7 +141,7 @@ class Order {
 		  $sql .= " LIMIT 1 ";
 		  $mydb->setQuery($sql);
 		  
-			if(!$mydb->executeQuery()) return false; 	
+			if(!$mydb->execute()) return false; 	
 	
 	}	
 

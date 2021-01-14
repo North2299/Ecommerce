@@ -104,7 +104,7 @@ class Autonumber {
 		$sql .= "')";
 	echo $mydb->setQuery($sql);
 	
-	 if($mydb->executeQuery()) {
+	 if($mydb->execute()) {
 	    $this->id = $mydb->insert_id();
 	    return true;
 	  } else {
@@ -123,7 +123,7 @@ class Autonumber {
 		$sql .= join(", ", $attribute_pairs);
 		$sql .= " WHERE AUTOKEY='{$id}'";
 	  $mydb->setQuery($sql);
-	 	if(!$mydb->executeQuery()) return false; 	
+	 	if(!$mydb->execute()) return false; 	
 		
 	}
 
@@ -133,7 +133,7 @@ class Autonumber {
 		$sql .= "AUTOEND = AUTOEND + AUTOINC";
 		$sql .= " WHERE AUTOKEY='{$id}'";
 	  $mydb->setQuery($sql);
-	 	if(!$mydb->executeQuery())  return false; 	
+	 	if(!$mydb->execute())  return false; 	
 		
 	}
 
@@ -144,7 +144,7 @@ class Autonumber {
 		  $sql .= " LIMIT 1 ";
 		  $mydb->setQuery($sql);
 		  
-			if(!$mydb->executeQuery()) return false; 	
+			if(!$mydb->execute()) return false; 	
 	
 	}	
 

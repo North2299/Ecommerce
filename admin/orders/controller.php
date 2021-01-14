@@ -158,7 +158,7 @@ function doInsert(){
 
 	        $sql = "INSERT INTO `messageout` (`Id`, `MessageTo`, `MessageFrom`, `MessageText`) VALUES (Null, '".$cur->PHONE."','Janno','FROM Bachelor of Science and Entrepreneurs : Your order has been '".$status. "'. The amount is '".$cur->PAYMENT. "')";
 	        $mydb->setQuery($sql);
-	        $mydb->executeQuery();
+	        $mydb->execute();
 
 
 
@@ -173,7 +173,7 @@ function doInsert(){
 			 
 	  		 $sql = "INSERT INTO `messageout` (`Id`, `MessageTo`, `MessageFrom`, `MessageText`) VALUES (Null, '".$result->OWNERPHONE."','Janno','FROM Bachelor of Science and Entrepreneurs : Your  product has been ordered'. The amount is '".$result->PAYMENT. "')";
 	        $mydb->setQuery($sql);
-	        $mydb->executeQuery();
+	        $mydb->execute();
 	 
 			}
       
