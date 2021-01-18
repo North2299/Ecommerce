@@ -98,13 +98,7 @@
                       <p><?php  echo    $result->PRODESC; ?></p>
                       <button type="submit" name="btnorder" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                     </div>
-                    <div class="product-overlay">
-                      <div class="overlay-content">
-                        <h2>&#8369 <?php  echo $result->PRODISPRICE; ?></h2>
-                        <p><?php  echo    $result->PRODESC; ?></p>
-                       <button type="submit" name="btnorder" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                      </div>
-                    </div>
+                    
                 </div>
                 <div class="choose">
                   <ul class="nav nav-pills nav-justified">

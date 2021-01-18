@@ -4,8 +4,8 @@
 // }else{
 //     require_once("include/initialize.php");
 // }
- require_once("include/initialize.php");
- $PROID =   $_GET['id']; 
+require_once("include/initialize.php");
+$PROID =   $_GET['id']; 
 $query = "SELECT * FROM `promo` pr , `produit` p , `categorie` c
             WHERE pr.`PROID`=p.`PROID` AND  p.`CATEGID` = c.`CATEGID`  AND  p.`PROID`=" . $PROID;
             $mydb->setQuery($query);
@@ -15,7 +15,7 @@ $query = "SELECT * FROM `promo` pr , `produit` p , `categorie` c
   foreach ($cur as $result) { 
    
  ?>
-
+<div class="container">
 
         <!-- Portfolio Item Row -->
    <form   method="POST" action="cart/controller.php?action=add">
@@ -23,6 +23,7 @@ $query = "SELECT * FROM `promo` pr , `produit` p , `categorie` c
         <div class="row">
 
             <div class="col-md-6">
+            
             <div class="row">
                 <div class="col-m-12">
                     <div class="col-md-6 responsive">
@@ -60,7 +61,7 @@ $query = "SELECT * FROM `promo` pr , `produit` p , `categorie` c
         </div>
         <!-- /.row -->
 </form>
-
+</div>
 <?php } 
  
  ?>    

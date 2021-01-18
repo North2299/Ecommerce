@@ -1,11 +1,11 @@
  <?php
  require_once ("include/initialize.php"); 
- if (@$_GET['page'] <= 2 or @$_GET['page'] > 5) {
+ //if (@$_GET['page'] <= 2 or @$_GET['page'] > 5) {
   # code...
     // unset($_SESSION['PRODUCTID']);
     // // unset($_SESSION['QTY']);
     // // unset($_SESSION['TOTAL']);
-} 
+//} 
 
 
  
@@ -56,7 +56,7 @@ if(isset($_POST['sidebarLogin'])){
             redirect(web_root."index.php?q=orderdetails");
            }else{
               $proid = $_POST['proid'];
-              $id = mysql_insert_id(); 
+              $id = insert_id(); 
               $query ="INSERT INTO `tblwishlist` (`PROID`, `CUSID`, `WISHDATE`, `WISHSTATS`)  VALUES ('". $proid."','".$_SESSION['CUSID']."','".DATE('Y-m-d')."',0)";
               mysql_query($query) or die(mysql_error());
               redirect(web_root."index.php?q=profile");

@@ -9,13 +9,13 @@ $query = "SELECT * FROM `promo` pr , `produit` p , `categorie` c
   foreach ($cur as $result) { 
    
  ?>
-
+<div class="container">
         <!-- Portfolio Item Row -->
    <form   method="POST" action="cart/controller.php?action=add">
         
         <div class="row">
 
-            <div class="col-md-8">
+            <div class="col-md-6">
             <div class="row">
                 <div class="col-m-12">
                     <div class="col-md-8 responsive">
@@ -30,7 +30,7 @@ $query = "SELECT * FROM `promo` pr , `produit` p , `categorie` c
             </div>
 
      
-            <div class="col-md-4">
+            <div class="col-md-6">
               <input type="hidden" name="PROPRICE" value="<?php  echo $result->PRODISPRICE; ?>">
               <input type="hidden" id="PROQTY" name="PROQTY" value="<?php  echo $result->PROQTY; ?>">
 
@@ -102,3 +102,4 @@ $query = "SELECT * FROM `promo` pr , `produit` p , `categorie` c
             </div> -->
 
         </div>
+    </div>

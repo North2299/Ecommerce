@@ -74,7 +74,7 @@ if (isset($_SESSION['gcCart'])){
         <div class="row">
           <div class="col-md-4 clearfix">
             <div class="logo pull-left">
-              <a href="<?php echo web_root?>"><img src="inc/images/home/logo.png" alt="" /></a>
+              <a href="<?php echo web_root?>"><img src="inc/images/home/logo1.png" alt="" /></a>
             </div> 
           </div>
           <div class="col-md-8 clearfix">

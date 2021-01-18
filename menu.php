@@ -1,6 +1,6 @@
  <section id="advertisement">
     <div class="container">
-      <img src="images/shop/advertisement.jpg" alt="" />
+      <!--<img src="images/shop/advertisement.jpg" alt="" />-->
     </div>
   </section>
   
@@ -52,17 +52,12 @@
                       <p><?php  echo    $result->PRODESC; ?></p>
                       <button type="submit" name="btnorder" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                     </div>
-                    <div class="product-overlay">
-                      <div class="overlay-content">
-                        <h2>&#8369 <?php  echo $result->PRODISPRICE; ?></h2>
-                        <p><?php  echo    $result->PRODESC; ?></p>
-                        <button type="submit" name="btnorder" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                      </div>
-                    </div>
+                    
                 </div>
                 <div class="choose">
                   <ul class="nav nav-pills nav-justified">
                    <li>
+                   <?php echo ' <a href="'.web_root. 'index.php?q=single-item&id='.$result->PROID.'" title="view product"><i class="fa fa-plus-square"></i>View product</a></a>';?>
                               <?php     
                             if (isset($_SESSION['CUSID'])){  
 

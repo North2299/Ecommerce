@@ -647,7 +647,7 @@ ul.sub-menu {
 
 .left-sidebar h2,
 .brands_products h2 {
-    color: #FE980F;
+    color: #f83a0acb;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 700;
@@ -819,7 +819,7 @@ h2.title:before {
 }
 
 h2.title {
-    color: #FE980F;
+    color: #f83a0acb;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     font-weight: 700;
@@ -2438,4 +2438,8 @@ textarea {
 
 .contact-info .social-networks ul li a:hover {
     color: #FE980F;
+}
+.changeColor h2{
+    color:rgba(254, 15, 47, 0.8)
+    
 }
