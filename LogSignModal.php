@@ -27,7 +27,7 @@
                         </div>
                         <div class="panel-body">
 
-                           <form class="form-horizontal span6" name=""  action="login.php" method="POST">
+                           <form class="form-horizontal span6" name="" action="login.php" method="POST">
                               <input class="proid" type="hidden" name="proid" id="proid" value="">
                                 <div class="form-group">
                                   <div class="col-md-10">
@@ -70,6 +70,7 @@
 
                        </div>
                         <div class="panel-footer">
+                          <?php check_message(); ?>
                              <p align="left">&copy; <a href="https://bit.ly/2LPn9Wu">Janobe Source Code</a></p>
                         </div>
                     </div> 
@@ -243,3 +244,5 @@
             var targetWin = window.open(pageURL, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
         } 
     </script>
+
+
