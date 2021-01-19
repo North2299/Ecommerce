@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Aug 21, 2019 at 08:16 AM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 5.6.38
+-- Hôte : 127.0.0.1
+-- Généré le : mar. 19 jan. 2021 à 21:06
+-- Version du serveur :  10.4.14-MariaDB
+-- Version de PHP : 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,144 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_ecommerce`
+-- Base de données : `db_ecommerce`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messagein`
+-- Structure de la table `admin`
+--
+
+CREATE TABLE `admin` (
+  `USERID` int(11) NOT NULL,
+  `U_NAME` varchar(122) NOT NULL,
+  `U_USERNAME` varchar(122) NOT NULL,
+  `U_PASS` varchar(122) NOT NULL,
+  `U_ROLE` varchar(30) NOT NULL,
+  `USERIMAGE` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `admin`
+--
+
+INSERT INTO `admin` (`USERID`, `U_NAME`, `U_USERNAME`, `U_PASS`, `U_ROLE`, `USERIMAGE`) VALUES
+(124, 'Kenjie Palacios', 'kenjie', '4752fe635442d048e8e8d2d1d845e6a578f30470', 'Administrator', 'photos/COC-war-base-design.jpg'),
+(126, 'Janobe Palacios', 'janobe', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrator', 'photos/10329236_874204835938922_6636897990257224477_n.jpg'),
+(127, 'Craig Palacios', 'craig', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrator', '');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `categorie`
+--
+
+CREATE TABLE `categorie` (
+  `CATEGID` int(11) NOT NULL,
+  `CATEGORIES` varchar(255) NOT NULL,
+  `USERID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `categorie`
+--
+
+INSERT INTO `categorie` (`CATEGID`, `CATEGORIES`, `USERID`) VALUES
+(20, 'computers', 0),
+(21, 'smartphones', 0),
+(23, 'printers', 0),
+(24, 'accessories', 0),
+(25, 'cameras', 0),
+(26, 'TVs', 0),
+(27, 'smart watches', 0),
+(28, 'tablets', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `client`
+--
+
+CREATE TABLE `client` (
+  `CUSTOMERID` int(11) NOT NULL,
+  `FNAME` varchar(30) NOT NULL,
+  `LNAME` varchar(30) NOT NULL,
+  `MNAME` varchar(30) NOT NULL,
+  `CUSHOMENUM` varchar(90) NOT NULL,
+  `STREETADD` text NOT NULL,
+  `BRGYADD` text NOT NULL,
+  `CITYADD` text NOT NULL,
+  `PROVINCE` varchar(80) NOT NULL,
+  `COUNTRY` varchar(30) NOT NULL,
+  `DBIRTH` date NOT NULL,
+  `GENDER` varchar(10) NOT NULL,
+  `PHONE` varchar(20) NOT NULL,
+  `EMAILADD` varchar(40) NOT NULL,
+  `ZIPCODE` int(6) NOT NULL,
+  `CUSUNAME` varchar(20) NOT NULL,
+  `CUSPASS` varchar(90) NOT NULL,
+  `CUSPHOTO` varchar(255) NOT NULL,
+  `TERMS` tinyint(4) NOT NULL,
+  `DATEJOIN` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `client`
+--
+
+INSERT INTO `client` (`CUSTOMERID`, `FNAME`, `LNAME`, `MNAME`, `CUSHOMENUM`, `STREETADD`, `BRGYADD`, `CITYADD`, `PROVINCE`, `COUNTRY`, `DBIRTH`, `GENDER`, `PHONE`, `EMAILADD`, `ZIPCODE`, `CUSUNAME`, `CUSPASS`, `CUSPHOTO`, `TERMS`, `DATEJOIN`) VALUES
+(1, 'janobe', 'Palacios', '', '321', 'Coloso Street', 'brgy. 1', 'Kabankalan City', 'Negros Occidental', 'Philippines', '0000-00-00', 'Male', '+639956112920', '', 6111, 'kenjie@yahoo.com', '1dd4efc811372cd1efe855981a8863d10ddde1ca', 'customer_image/a1157016c5d8272126380b27a59e2e7e.jpg', 1, '2015-11-26'),
+(2, 'Mark Anthony', 'Geasin', '', '1234', 'paglaom', 'dancalan', 'ilog', 'negros occ', 'philippines', '0000-00-00', '', '091023333234', '', 6111, 'bboy', '0377588176145a8f0d837ff6e9bf0c1616268387', 'customer_image/10801930_959054964122877_391305007291646162_n.jpg', 1, '2015-11-26'),
+(3, 'Jano', 'Palacios', '', '12312', 's', 'brgy 1', 'kabankalan city', 'negross occidental', 'philippines', '0000-00-00', 'Male', '21312312312', '', 6111, 'jan', '53199fa57fdf5676d03d89fbdd26e69a927766fc', 'customer_image/Tropical-Beach-Wallpaper.jpg', 1, '2017-12-08'),
+(4, 'Jamei', 'Laveste', '', '', '', '', 'kabankalan city', '', '', '0000-00-00', 'Female', '362656556', '', 0, 'jame', 'f144dcce05af4d40fa0aeba34b05f4472472a4de', 'customer_image/1351064148bpguarhW.jpg', 1, '2018-01-23'),
+(5, 'Jeanniebe', 'Palacios', '', '', '', '', 'Kab City', '', '', '0000-00-00', 'Female', '+639486457414', '', 0, 'bebe', 'd079a1c06803587ea09bff3f44a567e19169e7b5', '', 1, '2018-02-09'),
+(6, 'Janry', 'Tan', '', '', '', '', 'Kab City', '', '', '0000-00-00', 'Male', '0234234', '', 0, 'jan', '0271c5467994a9e88e01be5b7e1f5f43d0ab93d2', '', 1, '2018-04-01'),
+(7, 'Jake', 'Cuenca', '', '', '', '', 'Kabankalan City', '', '', '0000-00-00', 'Male', '639305235027', '', 0, 'jake', '403ba16f713c8371eef121530a922824be29b68a', '', 1, '2018-04-16'),
+(8, 'Jake', 'Tam', '', '', '', '', 'Kab City', '', '', '0000-00-00', 'Male', '021312312', '', 0, 'j', '30e1fe53111f7e583c382596a32885fd27283970', '', 1, '2018-09-23'),
+(9, 'Annie', 'Paredes', '', '', '', '', 's', '', '', '0000-00-00', 'Female', '12312312', '', 0, 'an', 'aa46142b604e671794a84129896d4dec508dec81', 'customer_image/shirt2.jpg', 1, '2019-08-20'),
+(10, 'taha', 'chaari', '', '', '', '', 'sfax', '', '', '0000-00-00', 'Male', '51539047', '', 0, 'taha', '596afd7a600563c3c8a5845f6486bbf9d0999956', 'customer_image/120552415_343469200318978_837273095330120245_n.jpg', 1, '2021-01-14');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `lignecommande`
+--
+
+CREATE TABLE `lignecommande` (
+  `ORDERID` int(11) NOT NULL,
+  `PROID` int(11) NOT NULL,
+  `ORDEREDQTY` int(11) NOT NULL,
+  `ORDEREDPRICE` double NOT NULL,
+  `ORDEREDNUM` int(11) NOT NULL,
+  `USERID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `lignecommande`
+--
+
+INSERT INTO `lignecommande` (`ORDERID`, `PROID`, `ORDEREDQTY`, `ORDEREDPRICE`, `ORDEREDNUM`, `USERID`) VALUES
+(1, 201737, 4, 476, 93, 0),
+(2, 201740, 3, 447, 93, 0),
+(3, 201738, 1, 199, 94, 0),
+(4, 201739, 1, 289, 95, 0),
+(5, 201740, 1, 149, 96, 0),
+(6, 0, 0, 0, 0, 0),
+(7, 0, 0, 0, 0, 0),
+(8, 0, 0, 0, 0, 0),
+(9, 0, 0, 0, 0, 0),
+(10, 0, 0, 0, 0, 0),
+(11, 0, 0, 0, 0, 0),
+(18, 0, 0, 0, 0, 0),
+(19, 0, 0, 0, 0, 0),
+(20, 0, 0, 0, 0, 0),
+(21, 0, 0, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `messagein`
 --
 
 CREATE TABLE `messagein` (
@@ -35,16 +165,16 @@ CREATE TABLE `messagein` (
   `MessageFrom` varchar(80) DEFAULT NULL,
   `MessageTo` varchar(80) DEFAULT NULL,
   `SMSC` varchar(80) DEFAULT NULL,
-  `MessageText` text,
+  `MessageText` text DEFAULT NULL,
   `MessageType` varchar(80) DEFAULT NULL,
   `MessageParts` int(11) DEFAULT NULL,
-  `MessagePDU` text,
+  `MessagePDU` text DEFAULT NULL,
   `Gateway` varchar(80) DEFAULT NULL,
   `UserId` varchar(80) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `messagein`
+-- Déchargement des données de la table `messagein`
 --
 
 INSERT INTO `messagein` (`Id`, `SendTime`, `ReceiveTime`, `MessageFrom`, `MessageTo`, `SMSC`, `MessageText`, `MessageType`, `MessageParts`, `MessagePDU`, `Gateway`, `UserId`) VALUES
@@ -58,7 +188,7 @@ INSERT INTO `messagein` (`Id`, `SendTime`, `ReceiveTime`, `MessageFrom`, `Messag
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messagelog`
+-- Structure de la table `messagelog`
 --
 
 CREATE TABLE `messagelog` (
@@ -69,21 +199,21 @@ CREATE TABLE `messagelog` (
   `StatusText` varchar(80) DEFAULT NULL,
   `MessageTo` varchar(80) DEFAULT NULL,
   `MessageFrom` varchar(80) DEFAULT NULL,
-  `MessageText` text,
+  `MessageText` text DEFAULT NULL,
   `MessageType` varchar(80) DEFAULT NULL,
   `MessageId` varchar(80) DEFAULT NULL,
   `ErrorCode` varchar(80) DEFAULT NULL,
   `ErrorText` varchar(80) DEFAULT NULL,
   `Gateway` varchar(80) DEFAULT NULL,
   `MessageParts` int(11) DEFAULT NULL,
-  `MessagePDU` text,
+  `MessagePDU` text DEFAULT NULL,
   `Connector` varchar(80) DEFAULT NULL,
   `UserId` varchar(80) DEFAULT NULL,
-  `UserInfo` text
+  `UserInfo` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `messagelog`
+-- Déchargement des données de la table `messagelog`
 --
 
 INSERT INTO `messagelog` (`Id`, `SendTime`, `ReceiveTime`, `StatusCode`, `StatusText`, `MessageTo`, `MessageFrom`, `MessageText`, `MessageType`, `MessageId`, `ErrorCode`, `ErrorText`, `Gateway`, `MessageParts`, `MessagePDU`, `Connector`, `UserId`, `UserInfo`) VALUES
@@ -118,148 +248,29 @@ INSERT INTO `messagelog` (`Id`, `SendTime`, `ReceiveTime`, `StatusCode`, `Status
 -- --------------------------------------------------------
 
 --
--- Table structure for table `messageout`
+-- Structure de la table `messageout`
 --
 
 CREATE TABLE `messageout` (
   `Id` int(11) NOT NULL,
   `MessageTo` varchar(80) DEFAULT NULL,
   `MessageFrom` varchar(80) DEFAULT NULL,
-  `MessageText` text,
+  `MessageText` text DEFAULT NULL,
   `MessageType` varchar(80) DEFAULT NULL,
   `Gateway` varchar(80) DEFAULT NULL,
   `UserId` varchar(80) DEFAULT NULL,
-  `UserInfo` text,
+  `UserInfo` text DEFAULT NULL,
   `Priority` int(11) DEFAULT NULL,
   `Scheduled` datetime DEFAULT NULL,
   `ValidityPeriod` int(11) DEFAULT NULL,
-  `IsSent` tinyint(1) NOT NULL DEFAULT '0',
-  `IsRead` tinyint(1) NOT NULL DEFAULT '0'
+  `IsSent` tinyint(1) NOT NULL DEFAULT 0,
+  `IsRead` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblautonumber`
---
-
-CREATE TABLE `tblautonumber` (
-  `ID` int(11) NOT NULL,
-  `AUTOSTART` varchar(11) NOT NULL,
-  `AUTOINC` int(11) NOT NULL,
-  `AUTOEND` int(11) NOT NULL,
-  `AUTOKEY` varchar(12) NOT NULL,
-  `AUTONUM` int(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblautonumber`
---
-
-INSERT INTO `tblautonumber` (`ID`, `AUTOSTART`, `AUTOINC`, `AUTOEND`, `AUTOKEY`, `AUTONUM`) VALUES
-(1, '2017', 1, 43, 'PROID', 10),
-(2, '0', 1, 95, 'ordernumber', 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `categorie`
---
-
-CREATE TABLE `categorie` (
-  `CATEGID` int(11) NOT NULL,
-  `CATEGORIES` varchar(255) NOT NULL,
-  `USERID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `categorie`
---
-
-INSERT INTO `categorie` (`CATEGID`, `CATEGORIES`, `USERID`) VALUES
-(5, 'SHOES', 0),
-(11, 'BAGS', 0),
-(12, 'CLOTHING', 0),
-(13, 'INTERIORS', 0),
-(14, 'HOUSEHOLDS', 0),
-(15, 'FASHION', 0),
-(16, 'KIDS', 0),
-(17, 'WOMENS', 0),
-(18, 'MENS', 0),
-(19, 'SPORTSWEAR', 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tblcustomer`
---
-
-CREATE TABLE `tblcustomer` (
-  `CUSTOMERID` int(11) NOT NULL,
-  `FNAME` varchar(30) NOT NULL,
-  `LNAME` varchar(30) NOT NULL,
-  `MNAME` varchar(30) NOT NULL,
-  `CUSHOMENUM` varchar(90) NOT NULL,
-  `STREETADD` text NOT NULL,
-  `BRGYADD` text NOT NULL,
-  `CITYADD` text NOT NULL,
-  `PROVINCE` varchar(80) NOT NULL,
-  `COUNTRY` varchar(30) NOT NULL,
-  `DBIRTH` date NOT NULL,
-  `GENDER` varchar(10) NOT NULL,
-  `PHONE` varchar(20) NOT NULL,
-  `EMAILADD` varchar(40) NOT NULL,
-  `ZIPCODE` int(6) NOT NULL,
-  `CUSUNAME` varchar(20) NOT NULL,
-  `CUSPASS` varchar(90) NOT NULL,
-  `CUSPHOTO` varchar(255) NOT NULL,
-  `TERMS` tinyint(4) NOT NULL,
-  `DATEJOIN` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tblcustomer`
---
-
-INSERT INTO `tblcustomer` (`CUSTOMERID`, `FNAME`, `LNAME`, `MNAME`, `CUSHOMENUM`, `STREETADD`, `BRGYADD`, `CITYADD`, `PROVINCE`, `COUNTRY`, `DBIRTH`, `GENDER`, `PHONE`, `EMAILADD`, `ZIPCODE`, `CUSUNAME`, `CUSPASS`, `CUSPHOTO`, `TERMS`, `DATEJOIN`) VALUES
-(1, 'janobe', 'Palacios', '', '321', 'Coloso Street', 'brgy. 1', 'Kabankalan City', 'Negros Occidental', 'Philippines', '0000-00-00', 'Male', '+639956112920', '', 6111, 'kenjie@yahoo.com', '1dd4efc811372cd1efe855981a8863d10ddde1ca', 'customer_image/a1157016c5d8272126380b27a59e2e7e.jpg', 1, '2015-11-26'),
-(2, 'Mark Anthony', 'Geasin', '', '1234', 'paglaom', 'dancalan', 'ilog', 'negros occ', 'philippines', '0000-00-00', '', '091023333234', '', 6111, 'bboy', '0377588176145a8f0d837ff6e9bf0c1616268387', 'customer_image/10801930_959054964122877_391305007291646162_n.jpg', 1, '2015-11-26'),
-(3, 'Jano', 'Palacios', '', '12312', 's', 'brgy 1', 'kabankalan city', 'negross occidental', 'philippines', '0000-00-00', 'Male', '21312312312', '', 6111, 'jan', '53199fa57fdf5676d03d89fbdd26e69a927766fc', 'customer_image/Tropical-Beach-Wallpaper.jpg', 1, '2017-12-08'),
-(4, 'Jamei', 'Laveste', '', '', '', '', 'kabankalan city', '', '', '0000-00-00', 'Female', '362656556', '', 0, 'jame', 'f144dcce05af4d40fa0aeba34b05f4472472a4de', 'customer_image/1351064148bpguarhW.jpg', 1, '2018-01-23'),
-(5, 'Jeanniebe', 'Palacios', '', '', '', '', 'Kab City', '', '', '0000-00-00', 'Female', '+639486457414', '', 0, 'bebe', 'd079a1c06803587ea09bff3f44a567e19169e7b5', '', 1, '2018-02-09'),
-(6, 'Janry', 'Tan', '', '', '', '', 'Kab City', '', '', '0000-00-00', 'Male', '0234234', '', 0, 'jan', '0271c5467994a9e88e01be5b7e1f5f43d0ab93d2', '', 1, '2018-04-01'),
-(7, 'Jake', 'Cuenca', '', '', '', '', 'Kabankalan City', '', '', '0000-00-00', 'Male', '639305235027', '', 0, 'jake', '403ba16f713c8371eef121530a922824be29b68a', '', 1, '2018-04-16'),
-(8, 'Jake', 'Tam', '', '', '', '', 'Kab City', '', '', '0000-00-00', 'Male', '021312312', '', 0, 'j', '30e1fe53111f7e583c382596a32885fd27283970', '', 1, '2018-09-23'),
-(9, 'Annie', 'Paredes', '', '', '', '', 's', '', '', '0000-00-00', 'Female', '12312312', '', 0, 'an', 'aa46142b604e671794a84129896d4dec508dec81', 'customer_image/shirt2.jpg', 1, '2019-08-20');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `lignecommande`
---
-
-CREATE TABLE `lignecommande` (
-  `ORDERID` int(11) NOT NULL,
-  `PROID` int(11) NOT NULL,
-  `ORDEREDQTY` int(11) NOT NULL,
-  `ORDEREDPRICE` double NOT NULL,
-  `ORDEREDNUM` int(11) NOT NULL,
-  `USERID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `lignecommande`
---
-
-INSERT INTO `lignecommande` (`ORDERID`, `PROID`, `ORDEREDQTY`, `ORDEREDPRICE`, `ORDEREDNUM`, `USERID`) VALUES
-(1, 201737, 4, 476, 93, 0),
-(2, 201740, 3, 447, 93, 0),
-(3, 201738, 1, 199, 94, 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `produit`
+-- Structure de la table `produit`
 --
 
 CREATE TABLE `produit` (
@@ -277,21 +288,43 @@ CREATE TABLE `produit` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `produit`
+-- Déchargement des données de la table `produit`
 --
 
 INSERT INTO `produit` (`PROID`, `PRODESC`, `INGREDIENTS`, `PROQTY`, `ORIGINALPRICE`, `PROPRICE`, `CATEGID`, `IMAGES`, `PROSTATS`, `OWNERNAME`, `OWNERPHONE`) VALUES
-(201737, 'KILY Korean Casual Sleeveless Dress Printed Dress 5a0019                      ', '', 5, 100, 119, 12, 'uploaded_photos/korean.jpeg', 'Available', 'janobe', ''),
-(201738, 'terno top and pants korean fashion boho terno summer terno for women  ', '', 3, 150, 199, 12, 'uploaded_photos/terno.jpg', 'Available', 'janobe', ''),
-(201739, '4Color Menâ€²S Denim Pants STRETCHABLE Skinny Black/Blue', '', 5, 250, 289, 18, 'uploaded_photos/jeans.jpg', 'Available', 'janobe', ''),
-(201740, 'SIMPLE Fashion Men`S Casual T Shirt Short Sleeve Round neck Top', '', 1, 100, 149, 18, 'uploaded_photos/shirt.jpg', 'Available', 'janobe', ''),
-(201741, 'ICM #T146 BESTSELLER TOPS TSHIRT FOR MEN', '', 4, 50, 89, 18, 'uploaded_photos/shirt2.jpg', 'Available', 'janobe', ''),
-(201742, 'CJY-001 Coat Rack Creative Simple CoatRack Bedroom Wardrobe (Gray)', '', 4, 250, 287, 14, 'uploaded_photos/bed.jpeg', 'Available', 'janobe', '');
+(201743, '-Self-lighting OLED: Perfect Black, Intense Color, Infinite Contrast\r\n-a9 Gen 3 AI Processor 4K with AI Picture Pro/Sound Pro\r\n-Dolby Vision IQ and Dolby Atmos\r\n-webOS + ThinQ AI w/ Magic Remote\r\n-Gaming: G-SYNC Compatible, FreeSync, VRR, ALLM', '', 20, 100000, 200000, 26, 'uploaded_photos/tv1 (2).jpg', 'Available', 'samsung', ''),
+(201744, '-Self-lighting OLED: Perfect Black, Intense Color, Infinite Contrast\r\n-a9 Gen 3 AI Processor 4K with AI Picture Pro/Sound Pro\r\n-Dolby Vision IQ and Dolby Atmos\r\n-webOS + ThinQ AI w/ Magic Remote\r\n-Gaming: G-SYNC Compatible, FreeSync, VRR, ALLM', '', 30, 2000, 3000, 26, 'uploaded_photos/tv2 (1).jpg', 'Available', 'samsung', ''),
+(201745, '-Self-lighting OLED: Perfect Black, Intense Color, Infinite Contrast\r\n-a9 Gen 3 AI Processor 4K with AI Picture Pro/Sound Pro\r\n-Dolby Vision IQ and Dolby Atmos\r\n-webOS + ThinQ AI w/ Magic Remote\r\n-Gaming: G-SYNC Compatible, FreeSync, VRR, ALLM', '', 20, 2000, 2300, 26, 'uploaded_photos/tv3.jpg', 'Available', 'TUSHIBA', ''),
+(201746, '-Self-lighting OLED: Perfect Black, Intense Color, Infinite Contrast\r\n-a9 Gen 3 AI Processor 4K with AI Picture Pro/Sound Pro\r\n-Dolby Vision IQ and Dolby Atmos\r\n-webOS + ThinQ AI w/ Magic Remote\r\n-Gaming: G-SYNC Compatible, FreeSync, VRR, ALLM', '', 20, 1500, 2000, 26, 'uploaded_photos/tv7 (1).jpg', 'Available', 'TUSHIBA', ''),
+(201747, '-Self-lighting OLED: Perfect Black, Intense Color, Infinite Contrast\r\n-a9 Gen 3 AI Processor 4K with AI Picture Pro/Sound Pro\r\n-Dolby Vision IQ and Dolby Atmos\r\n-webOS + ThinQ AI w/ Magic Remote\r\n-Gaming: G-SYNC Compatible, FreeSync, VRR, ALLM', '', 20, 2000, 2300, 26, 'uploaded_photos/tv5 (1).jpg', 'Available', 'TUSHIBA', ''),
+(201748, '-Self-lighting OLED: Perfect Black, Intense Color, Infinite Contrast\r\n-a9 Gen 3 AI Processor 4K with AI Picture Pro/Sound Pro\r\n-Dolby Vision IQ and Dolby Atmos\r\n-webOS + ThinQ AI w/ Magic Remote\r\n-Gaming: G-SYNC Compatible, FreeSync, VRR, ALLM', '', 20, 2400, 3000, 26, 'uploaded_photos/tv6 (1).jpg', 'Available', 'samsung', ''),
+(201749, '1. Approximate number of effective pixels.\r\n\r\n2. Compared to the ?7 II. Sony test conditions.\r\n\r\n3. Sony test conditions.\r\n\r\n4. Limited to 12 bits during compressed RAW continuous shooting, BULB exposure, or when Long Exposure NR is ON.\r\n\r\n5. When uncompr', '', 20, 500, 750, 25, 'uploaded_photos/cam7 (1).jpg', 'Available', 'NIKON', ''),
+(201750, '1. Approximate number of effective pixels.\r\n\r\n2. Compared to the ?7 II. Sony test conditions.\r\n\r\n3. Sony test conditions.\r\n\r\n4. Limited to 12 bits during compressed RAW continuous shooting, BULB exposure, or when Long Exposure NR is ON.\r\n\r\n5. When uncompr', '', 20, 2000, 2500, 25, 'uploaded_photos/cam2 (2).jpg', 'Available', 'canon', ''),
+(201751, '1. Approximate number of effective pixels.\r\n\r\n2. Compared to the ?7 II. Sony test conditions.\r\n\r\n3. Sony test conditions.\r\n\r\n4. Limited to 12 bits during compressed RAW continuous shooting, BULB exposure, or when Long Exposure NR is ON.\r\n\r\n5. When uncompr', '', 10, 1500, 2000, 25, 'uploaded_photos/cam3 (1).jpg', 'Available', 'SONY', ''),
+(201752, '1. Approximate number of effective pixels.\r\n\r\n2. Compared to the ?7 II. Sony test conditions.\r\n\r\n3. Sony test conditions.\r\n\r\n4. Limited to 12 bits during compressed RAW continuous shooting, BULB exposure, or when Long Exposure NR is ON.\r\n\r\n5. When uncompr', '', 20, 1000, 1500, 25, 'uploaded_photos/cam4 (1).jpg', 'Available', 'polaroid', ''),
+(201753, '1. Approximate number of effective pixels.\r\n\r\n2. Compared to the ?7 II. Sony test conditions.\r\n\r\n3. Sony test conditions.\r\n\r\n4. Limited to 12 bits during compressed RAW continuous shooting, BULB exposure, or when Long Exposure NR is ON.\r\n\r\n5. When uncompr', '', 10, 200, 500, 25, 'uploaded_photos/cam5 (1).jpg', 'Available', 'samsung', ''),
+(201754, '1. Approximate number of effective pixels.\r\n\r\n2. Compared to the ?7 II. Sony test conditions.\r\n\r\n3. Sony test conditions.\r\n\r\n4. Limited to 12 bits during compressed RAW continuous shooting, BULB exposure, or when Long Exposure NR is ON.\r\n\r\n5. When uncompr', '', 20, 600, 800, 25, 'uploaded_photos/cam6 (1).jpg', 'Available', 'samsung', ''),
+(201758, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', '', 20, 1000, 1200, 21, 'uploaded_photos/pphone10.jpg', 'Available', 'samsung', ''),
+(201759, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', '', 25, 1200, 1500, 21, 'uploaded_photos/phone2.jpg', 'Available', 'samsung', ''),
+(201760, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', '', 10, 2000, 2500, 21, 'uploaded_photos/phone3.jpg', 'Available', 'samsung', ''),
+(201761, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', '', 50, 2000, 2500, 21, 'uploaded_photos/phone8.jpg', 'Available', 'Iphone', ''),
+(201762, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', '', 10, 2500, 3000, 21, 'uploaded_photos/phone7.jpg', 'Available', 'Iphone', ''),
+(201763, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', '', 20, 1200, 1500, 21, 'uploaded_photos/phone9.jpg', 'Available', 'Oppo', ''),
+(201764, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', '', 10, 400, 600, 21, 'uploaded_photos/phone4.jpg', 'Available', 'samsung', ''),
+(201765, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', '', 10, 1500, 1700, 28, 'uploaded_photos/ipad1.jpg', 'Available', 'samsung', ''),
+(201766, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', '', 10, 200, 500, 28, 'uploaded_photos/ipad2.jpg', 'Available', 'TUSHIBA', ''),
+(201767, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', '', 15, 1000, 1200, 28, 'uploaded_photos/ipad3.jpg', 'Available', 'samsung', ''),
+(201768, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', '', 15, 1500, 1700, 28, 'uploaded_photos/ipad4.jpg', 'Available', 'apple', ''),
+(201769, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', '', 70, 1500, 1800, 28, 'uploaded_photos/ipad5.jpg', 'Available', 'Oppo', ''),
+(201770, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', '', 20, 2000, 2300, 28, 'uploaded_photos/ipad6.jpg', 'Available', 'samsung', ''),
+(201771, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', '', 20, 1400, 1600, 20, 'uploaded_photos/pc1.jpg', 'Available', 'apple', ''),
+(201772, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', '', 10, 5000, 6000, 20, 'uploaded_photos/pc2.jpg', 'Available', 'apple', ''),
+(201773, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', '', 12, 8000, 8500, 20, 'uploaded_photos/pc3.jpg', 'Available', 'apple', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `promo`
+-- Structure de la table `promo`
 --
 
 CREATE TABLE `promo` (
@@ -304,7 +337,7 @@ CREATE TABLE `promo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `promo`
+-- Déchargement des données de la table `promo`
 --
 
 INSERT INTO `promo` (`PROMOID`, `PROID`, `PRODISCOUNT`, `PRODISPRICE`, `PROBANNER`, `PRONEW`) VALUES
@@ -313,12 +346,63 @@ INSERT INTO `promo` (`PROMOID`, `PROID`, `PRODISCOUNT`, `PRODISPRICE`, `PROBANNE
 (3, 201739, 0, 289, 0, 0),
 (4, 201740, 0, 149, 0, 0),
 (5, 201741, 0, 89, 0, 0),
-(6, 201742, 0, 287, 0, 0);
+(6, 201742, 0, 287, 0, 0),
+(7, 201743, 0, 200000, 0, 0),
+(8, 201744, 0, 3000, 0, 0),
+(9, 201745, 0, 2300, 0, 0),
+(10, 201746, 0, 2000, 0, 0),
+(11, 201747, 0, 2300, 0, 0),
+(12, 201748, 0, 3000, 0, 0),
+(13, 201749, 0, 750, 0, 0),
+(14, 201750, 0, 2500, 0, 0),
+(15, 201751, 0, 2000, 0, 0),
+(16, 201752, 0, 1500, 0, 0),
+(17, 201753, 0, 500, 0, 0),
+(18, 201754, 0, 800, 0, 0),
+(22, 201758, 0, 1200, 0, 0),
+(23, 201759, 0, 1500, 0, 0),
+(24, 201760, 0, 2500, 0, 0),
+(25, 201761, 0, 2500, 0, 0),
+(26, 201762, 0, 3000, 0, 0),
+(27, 201763, 0, 1500, 0, 0),
+(28, 201764, 0, 600, 0, 0),
+(29, 201765, 0, 1700, 0, 0),
+(30, 201766, 0, 500, 0, 0),
+(31, 201767, 0, 1200, 0, 0),
+(32, 201768, 0, 1700, 0, 0),
+(33, 201769, 0, 1800, 0, 0),
+(34, 201770, 0, 2300, 0, 0),
+(35, 201771, 0, 1600, 0, 0),
+(36, 201772, 0, 6000, 0, 0),
+(37, 201773, 0, 8500, 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblsetting`
+-- Structure de la table `tblautonumber`
+--
+
+CREATE TABLE `tblautonumber` (
+  `ID` int(11) NOT NULL,
+  `AUTOSTART` varchar(11) NOT NULL,
+  `AUTOINC` int(11) NOT NULL,
+  `AUTOEND` int(11) NOT NULL,
+  `AUTOKEY` varchar(12) NOT NULL,
+  `AUTONUM` int(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `tblautonumber`
+--
+
+INSERT INTO `tblautonumber` (`ID`, `AUTOSTART`, `AUTOINC`, `AUTOEND`, `AUTOKEY`, `AUTONUM`) VALUES
+(1, '2017', 1, 74, 'PROID', 10),
+(2, '0', 1, 98, 'ordernumber', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `tblsetting`
 --
 
 CREATE TABLE `tblsetting` (
@@ -329,7 +413,7 @@ CREATE TABLE `tblsetting` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblsetting`
+-- Déchargement des données de la table `tblsetting`
 --
 
 INSERT INTO `tblsetting` (`SETTINGID`, `PLACE`, `BRGY`, `DELPRICE`) VALUES
@@ -339,7 +423,7 @@ INSERT INTO `tblsetting` (`SETTINGID`, `PLACE`, `BRGY`, `DELPRICE`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblstockin`
+-- Structure de la table `tblstockin`
 --
 
 CREATE TABLE `tblstockin` (
@@ -354,7 +438,7 @@ CREATE TABLE `tblstockin` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblsummary`
+-- Structure de la table `tblsummary`
 --
 
 CREATE TABLE `tblsummary` (
@@ -373,41 +457,20 @@ CREATE TABLE `tblsummary` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblsummary`
+-- Déchargement des données de la table `tblsummary`
 --
 
 INSERT INTO `tblsummary` (`SUMMARYID`, `ORDEREDDATE`, `CUSTOMERID`, `ORDEREDNUM`, `DELFEE`, `PAYMENT`, `PAYMENTMETHOD`, `ORDEREDSTATS`, `ORDEREDREMARKS`, `CLAIMEDADTE`, `HVIEW`, `USERID`) VALUES
 (1, '2019-08-21 06:24:24', 9, 93, 0, 0, 'Cash on Delivery', 'Pending', 'Your order is on process.', '0000-00-00 00:00:00', 1, 0),
-(3, '2019-08-21 06:27:09', 9, 94, 70, 269, 'Cash on Delivery', 'Confirmed', 'Your order has been confirmed.', '2019-08-21 00:00:00', 1, 0);
+(3, '2019-08-21 06:27:09', 9, 94, 70, 269, 'Cash on Delivery', 'Confirmed', 'Your order has been confirmed.', '2019-08-21 00:00:00', 1, 0),
+(4, '2021-01-14 05:32:50', 10, 95, 0, 289, 'Cash on Delivery', 'Pending', 'Your order is on process.', '0000-00-00 00:00:00', 0, 0),
+(5, '2021-01-14 05:33:20', 10, 96, 0, 149, 'Cash on Delivery', 'Pending', 'Your order is on process.', '0000-00-00 00:00:00', 0, 0),
+(6, '0000-00-00 00:00:00', 0, 0, 0, 0, '', '', '', '0000-00-00 00:00:00', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `USERID` int(11) NOT NULL,
-  `U_NAME` varchar(122) NOT NULL,
-  `U_USERNAME` varchar(122) NOT NULL,
-  `U_PASS` varchar(122) NOT NULL,
-  `U_ROLE` varchar(30) NOT NULL,
-  `USERIMAGE` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`USERID`, `U_NAME`, `U_USERNAME`, `U_PASS`, `U_ROLE`, `USERIMAGE`) VALUES
-(124, 'Kenjie Palacios', 'kenjie', '4752fe635442d048e8e8d2d1d845e6a578f30470', 'Administrator', 'photos/COC-war-base-design.jpg'),
-(126, 'Janobe Palacios', 'janobe', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrator', 'photos/10329236_874204835938922_6636897990257224477_n.jpg'),
-(127, 'Craig Palacios', 'craig', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrator', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tblwishlist`
+-- Structure de la table `tblwishlist`
 --
 
 CREATE TABLE `tblwishlist` (
@@ -419,56 +482,38 @@ CREATE TABLE `tblwishlist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblwishlist`
+-- Déchargement des données de la table `tblwishlist`
 --
 
 INSERT INTO `tblwishlist` (`id`, `CUSID`, `PROID`, `WISHDATE`, `WISHSTATS`) VALUES
-(2, 9, 201742, '2019-08-21', '0');
+(2, 9, 201742, '2019-08-21', '0'),
+(3, 0, 0, '2021-01-14', '0'),
+(4, 10, 201741, '2021-01-15', '0');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `messagein`
+-- Index pour la table `admin`
 --
-ALTER TABLE `messagein`
-  ADD PRIMARY KEY (`Id`);
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`USERID`);
 
 --
--- Indexes for table `messagelog`
---
-ALTER TABLE `messagelog`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `IDX_MessageId` (`MessageId`,`SendTime`);
-
---
--- Indexes for table `messageout`
---
-ALTER TABLE `messageout`
-  ADD PRIMARY KEY (`Id`),
-  ADD KEY `IDX_IsRead` (`IsRead`);
-
---
--- Indexes for table `tblautonumber`
---
-ALTER TABLE `tblautonumber`
-  ADD PRIMARY KEY (`ID`);
-
---
--- Indexes for table `categorie`
+-- Index pour la table `categorie`
 --
 ALTER TABLE `categorie`
   ADD PRIMARY KEY (`CATEGID`);
 
 --
--- Indexes for table `tblcustomer`
+-- Index pour la table `client`
 --
-ALTER TABLE `tblcustomer`
+ALTER TABLE `client`
   ADD PRIMARY KEY (`CUSTOMERID`);
 
 --
--- Indexes for table `lignecommande`
+-- Index pour la table `lignecommande`
 --
 ALTER TABLE `lignecommande`
   ADD PRIMARY KEY (`ORDERID`),
@@ -477,27 +522,53 @@ ALTER TABLE `lignecommande`
   ADD KEY `ORDEREDNUM` (`ORDEREDNUM`);
 
 --
--- Indexes for table `produit`
+-- Index pour la table `messagein`
+--
+ALTER TABLE `messagein`
+  ADD PRIMARY KEY (`Id`);
+
+--
+-- Index pour la table `messagelog`
+--
+ALTER TABLE `messagelog`
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `IDX_MessageId` (`MessageId`,`SendTime`);
+
+--
+-- Index pour la table `messageout`
+--
+ALTER TABLE `messageout`
+  ADD PRIMARY KEY (`Id`),
+  ADD KEY `IDX_IsRead` (`IsRead`);
+
+--
+-- Index pour la table `produit`
 --
 ALTER TABLE `produit`
   ADD PRIMARY KEY (`PROID`),
   ADD KEY `CATEGID` (`CATEGID`);
 
 --
--- Indexes for table `promo`
+-- Index pour la table `promo`
 --
 ALTER TABLE `promo`
   ADD PRIMARY KEY (`PROMOID`),
   ADD UNIQUE KEY `PROID` (`PROID`);
 
 --
--- Indexes for table `tblsetting`
+-- Index pour la table `tblautonumber`
+--
+ALTER TABLE `tblautonumber`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Index pour la table `tblsetting`
 --
 ALTER TABLE `tblsetting`
   ADD PRIMARY KEY (`SETTINGID`);
 
 --
--- Indexes for table `tblstockin`
+-- Index pour la table `tblstockin`
 --
 ALTER TABLE `tblstockin`
   ADD PRIMARY KEY (`STOCKINID`),
@@ -505,7 +576,7 @@ ALTER TABLE `tblstockin`
   ADD KEY `USERID` (`USERID`);
 
 --
--- Indexes for table `tblsummary`
+-- Index pour la table `tblsummary`
 --
 ALTER TABLE `tblsummary`
   ADD PRIMARY KEY (`SUMMARYID`),
@@ -514,98 +585,92 @@ ALTER TABLE `tblsummary`
   ADD KEY `USERID` (`USERID`);
 
 --
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`USERID`);
-
---
--- Indexes for table `tblwishlist`
+-- Index pour la table `tblwishlist`
 --
 ALTER TABLE `tblwishlist`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `messagein`
---
-ALTER TABLE `messagein`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `messagelog`
---
-ALTER TABLE `messagelog`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
-
---
--- AUTO_INCREMENT for table `messageout`
---
-ALTER TABLE `messageout`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `tblautonumber`
---
-ALTER TABLE `tblautonumber`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `categorie`
---
-ALTER TABLE `categorie`
-  MODIFY `CATEGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
---
--- AUTO_INCREMENT for table `tblcustomer`
---
-ALTER TABLE `tblcustomer`
-  MODIFY `CUSTOMERID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT for table `lignecommande`
---
-ALTER TABLE `lignecommande`
-  MODIFY `ORDERID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `promo`
---
-ALTER TABLE `promo`
-  MODIFY `PROMOID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT for table `tblsetting`
---
-ALTER TABLE `tblsetting`
-  MODIFY `SETTINGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT for table `tblstockin`
---
-ALTER TABLE `tblstockin`
-  MODIFY `STOCKINID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `tblsummary`
---
-ALTER TABLE `tblsummary`
-  MODIFY `SUMMARYID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT pour la table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `USERID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
 
 --
--- AUTO_INCREMENT for table `tblwishlist`
+-- AUTO_INCREMENT pour la table `categorie`
+--
+ALTER TABLE `categorie`
+  MODIFY `CATEGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT pour la table `client`
+--
+ALTER TABLE `client`
+  MODIFY `CUSTOMERID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT pour la table `lignecommande`
+--
+ALTER TABLE `lignecommande`
+  MODIFY `ORDERID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT pour la table `messagein`
+--
+ALTER TABLE `messagein`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT pour la table `messagelog`
+--
+ALTER TABLE `messagelog`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
+--
+-- AUTO_INCREMENT pour la table `messageout`
+--
+ALTER TABLE `messageout`
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `promo`
+--
+ALTER TABLE `promo`
+  MODIFY `PROMOID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+
+--
+-- AUTO_INCREMENT pour la table `tblautonumber`
+--
+ALTER TABLE `tblautonumber`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `tblsetting`
+--
+ALTER TABLE `tblsetting`
+  MODIFY `SETTINGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT pour la table `tblstockin`
+--
+ALTER TABLE `tblstockin`
+  MODIFY `STOCKINID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT pour la table `tblsummary`
+--
+ALTER TABLE `tblsummary`
+  MODIFY `SUMMARYID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT pour la table `tblwishlist`
 --
 ALTER TABLE `tblwishlist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

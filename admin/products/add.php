@@ -18,7 +18,7 @@
               <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "OWNERNAME">Owner:</label>
+                      "OWNERNAME">marque:</label>
 
                       <div class="col-md-8">
                             <input class="form-control input-sm" id="OWNERNAME" name="OWNERNAME" placeholder=
@@ -27,17 +27,8 @@
                     </div>
                   </div>  
 
-                   <div class="form-group">
-                    <div class="col-md-8">
-                      <label class="col-md-4 control-label" for=
-                      "OWNERPHONE">Phone:</label>
-
-                      <div class="col-md-8">
-                             <input class="form-control input-sm" id="OWNERPHONE" name="OWNERPHONE" placeholder=
-                            "+63 0000000000" type="number" value="">
-                      </div>
-                    </div>
-                  </div> 
+                   
+                 
 
                  <div class="form-group">
                     <div class="col-md-8">
@@ -87,7 +78,7 @@
 
                       <div class="col-md-3">
                          <input class="form-control input-sm" id="PROPRICE"  step="any" name="PROPRICE" placeholder=
-                            "&#8369 Price " type="number" value="">
+                            "price " type="number" value="">
                       </div>
                     </div>
                   </div>

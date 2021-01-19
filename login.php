@@ -12,7 +12,7 @@
 if(isset($_POST['sidebarLogin'])){
   $email = trim($_POST['U_USERNAME']);
   $upass  = trim($_POST['U_PASS']);
-  $h_upass = sha1($upass);
+  $h_upass = sha1($upass);//retourne le mdp hachée
   
    if ($email == '' OR $upass == '') {
 
@@ -56,7 +56,7 @@ if(isset($_POST['sidebarLogin'])){
             redirect(web_root."index.php?q=orderdetails");
            }else{
               $proid = $_POST['proid'];
-              $id = insert_id(); 
+              $id = mysql_insert_id(); 
               $query ="INSERT INTO `tblwishlist` (`PROID`, `CUSID`, `WISHDATE`, `WISHSTATS`)  VALUES ('". $proid."','".$_SESSION['CUSID']."','".DATE('Y-m-d')."',0)";
               mysql_query($query) or die(mysql_error());
               redirect(web_root."index.php?q=profile");

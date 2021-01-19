@@ -25,7 +25,7 @@ switch ($action) {
 	setBanner();
 	break;
 
- case 'discount' :
+ 	case 'discount' :
 	setDiscount();
 	break;
 	}

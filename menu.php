@@ -1,6 +1,6 @@
  <section id="advertisement">
     <div class="container">
-      <!--<img src="images/shop/advertisement.jpg" alt="" />-->
+      <img src="inc/images/shop/capture.png" alt="" />
     </div>
   </section>
   
@@ -48,8 +48,8 @@
                 <div class="single-products">
                     <div class="productinfo text-center">
                       <img src="<?php  echo web_root.'admin/products/'. $result->IMAGES; ?>" alt="" />
-                      <h2>&#8369 <?php  echo $result->PRODISPRICE; ?></h2>
-                      <p><?php  echo    $result->PRODESC; ?></p>
+                      <h2> <?php  echo $result->PRODISPRICE; ?>DT</h2>
+                      <p><?php  echo    $result->OWNERNAME; ?></p>
                       <button type="submit" name="btnorder" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                     </div>
                     

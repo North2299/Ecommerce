@@ -49,8 +49,8 @@ if (isset($_SESSION['gcCart'])){
           <div class="col-sm-6">
             <div class="contactinfo">
               <ul class="nav nav-pills">
-                <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-                <li><a href="#"><i class="fa fa-envelope"></i> jannopalacios@gmail.com</a></li>
+                <li><a href="#"><i class="fa fa-phone"></i> 123456789</a></li>
+                <li><a href="#"><i class="fa fa-envelope"></i> InfoShop@gmail.com</a></li>
               </ul>
             </div>
           </div>
@@ -98,14 +98,7 @@ if (isset($_SESSION['gcCart'])){
       <div class="container">
         <div class="row">
           <div class="col-sm-9">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-            </div>
+            
             <div class="mainmenu pull-left">
               <ul class="nav navbar-nav collapse navbar-collapse">
                 <li><a href="<?php echo web_root;?>" class="active">Home</a></li>

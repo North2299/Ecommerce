@@ -33,18 +33,17 @@ require_once("../include/initialize.php");
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
 </head>
-<body>
+<body->
+	
+
 	<div class="limiter" >
-		<div class="container-login100" style="background-image: url('images/img-01.jpg');">
+		<div class="container-login100">
 
 			<div class="wrap-login100">
 				<form method="post" action=""  class="login100-form validate-form" >
-					<div class="login100-form-avatar">
-						<img src="images/youtube pic copy.jpg" alt="AVATAR">
-					</div>
-
+					
 					<span class="login100-form-title p-t-20 p-b-45">
-						Janobe Source Code
+							INFO-SHOP
 					</span>
 
 				 	<?php echo check_message(); ?>

@@ -68,7 +68,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                 <a class="navbar-brand"  href="<?php echo web_root; ?>admin/index.php" >Janobe E-Commerce</a>
+                 <a class="navbar-brand"  href="<?php echo web_root; ?>admin/index.php" >INFO-SHOP</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -100,16 +100,12 @@ $singleuser = $user->single_user($_SESSION['USERID']);
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        Howdy, <?php echo $_SESSION['U_NAME']; ?> <img title="profile image" width="23px" height="17px" src="<?php echo web_root.'admin/user/'.$singleuser ->USERIMAGE ?>">  
+                         <?php echo $_SESSION['U_NAME']; ?> <img title="profile image" width="23px" height="17px" src="<?php echo web_root.'admin/user/'.$singleuser ->USERIMAGE ?>">  
                             
                     </a>
                     <ul class="dropdown-menu dropdown-acnt">
 
-                          <div class="divpic"> 
-                            <a href="" data-target="#usermodal"  data-toggle="modal" > 
-                                <img title="profile image" width="70" height="80" src="<?php echo web_root.'admin/user/'.$singleuser ->USERIMAGE ?>">  
-                            </a>
-                          </div> 
+
                     
 
                       <div class="divtxt">
@@ -166,10 +162,7 @@ $singleuser = $user->single_user($_SESSION['USERID']);
                             <a href="<?php echo web_root; ?>admin/user/index.php" ><i class="fa fa-user fa-fw"></i> Users </a>
                           
                         </li>
-                         <li>
-                            <a href="<?php echo web_root; ?>admin/report/index.php" ><i class="fa  fa-file-text fa-fw"></i> Report </a>
-                          
-                        </li>
+                       
                  <?php }  ?>
  
  

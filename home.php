@@ -12,39 +12,38 @@
             <div class="carousel-inner">
               <div class="item active">
                 <div class="col-sm-6">
-                  <h1><span>E</span>-SHOPPER</h1>
-                  <h2>Free E-Commerce Template</h2>
+                  <h1><span>INFO</span>-SHOP</h1>
+                  <h2>shop for latest electronics products</h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                  
                 </div>
                 <div class="col-sm-6">
-                  <img src="inc/images/home/girl1.jpg" class="girl img-responsive" alt="" />
-                  <img src="inc/images/home/pricing.png"  class="pricing" alt="" />
+                  <img src="inc/images/home/pc.jpg" class="girl img-responsive" alt="" />
+  
                 </div>
               </div>
               <div class="item">
                 <div class="col-sm-6">
-                  <h1><span>E</span>-SHOPPER</h1>
-                  <h2>100% Responsive Design</h2>
+                  <h1><span>INFO</span>-SHOP</h1>
+                  <h2>shop for latest electronics products</h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                  
                 </div>
                 <div class="col-sm-6">
-                  <img src="inc/images/home/girl2.jpg" class="girl img-responsive" alt="" />
-                  <img src="inc/images/home/pricing.png"  class="pricing" alt="" />
+                  <img src="inc/images/home/tablet.jpg" class="girl img-responsive" alt="" />
+
                 </div>
               </div>
               
               <div class="item">
                 <div class="col-sm-6">
-                  <h1><span>E</span>-SHOPPER</h1>
-                  <h2>Free Ecommerce Template</h2>
+                  <h1><span>INFO</span>-SHOP</h1>
+                  <h2>shop for latest electronics products</h2>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
                  
                 </div>
                 <div class="col-sm-6">
-                  <img src="inc/images/home/girl3.jpg" class="girl img-responsive" alt="" />
-                  <img src="inc/images/home/pricing.png" class="pricing" alt="" />
+                  <img src="inc/images/home/watch.jpg" class="girl img-responsive" alt="" />
                 </div>
               </div>
               
@@ -94,8 +93,8 @@
                 <div class="single-products">
                     <div class="productinfo text-center">
                       <img src="<?php  echo web_root.'admin/products/'. $result->IMAGES; ?>" alt="" />
-                      <h2>&#8369 <?php  echo $result->PRODISPRICE; ?></h2>
-                      <p><?php  echo    $result->PRODESC; ?></p>
+                      <h2> <?php  echo $result->PRODISPRICE; ?>DT</h2>
+                      <p><?php  echo    $result->OWNERNAME; ?></p>
                       <button type="submit" name="btnorder" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                     </div>
                     

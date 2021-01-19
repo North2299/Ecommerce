@@ -39,7 +39,7 @@ switch ($action) {
 
     foreach ($result as $row) {
     	# code...
-    	$tot = floatval($price) * 1;
+    	$tot = floatval($price) * 1;// Get float value of a variable
 				$qty = 1;
 	  
  

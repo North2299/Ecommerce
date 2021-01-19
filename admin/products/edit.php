@@ -25,7 +25,7 @@
         <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
-                      "OWNERNAME">Owner:</label>
+                      "OWNERNAME">marque:</label>
 
                       <div class="col-md-8">
                             <input class="form-control input-sm" id="OWNERNAME" name="OWNERNAME" placeholder=
@@ -34,17 +34,7 @@
                     </div>
                   </div>  
 
-                   <div class="form-group">
-                    <div class="col-md-8">
-                      <label class="col-md-4 control-label" for=
-                      "OWNERPHONE">Phone:</label>
-
-                      <div class="col-md-8">
-                             <input class="form-control input-sm" id="OWNERPHONE" name="OWNERPHONE" placeholder=
-                            "+63 0000000000" type="number" value="<?php echo $singleproduct->OWNERPHONE; ?>">
-                      </div>
-                    </div>
-                  </div> 
+                   
                      <div class="form-group">
                     <div class="col-md-8">
                       <label class="col-md-4 control-label" for=
