@@ -97,9 +97,16 @@ if (isset($_SESSION['gcCart'])){
     <div class="header-bottom"><!--header-bottom-->
       <div class="container">
         <div class="row">
-          <div class="col-sm-9">
+        <div class="col-md-2">
+            <form action="<?php echo web_root?>index.php?q=product" method="POST" > 
+              <div class="search_box pull-right">
+                <input type="text" name="search" placeholder="Search"/>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-10">
             
-            <div class="mainmenu pull-left">
+            <div class="mainmenu pull-right">
               <ul class="nav navbar-nav collapse navbar-collapse">
                 <li><a href="<?php echo web_root;?>" class="active">Home</a></li>
                 <li class="dropdown"><a href="#">Shop<i class="fa fa-angle-down"></i></a>
@@ -119,13 +126,7 @@ if (isset($_SESSION['gcCart'])){
               </ul>
             </div>
           </div>
-          <div class="col-sm-3">
-            <form action="<?php echo web_root?>index.php?q=product" method="POST" > 
-              <div class="search_box pull-right">
-                <input type="text" name="search" placeholder="Search"/>
-              </div>
-            </form>
-          </div>
+          
         </div>
       </div>
     </div><!--/header-bottom-->

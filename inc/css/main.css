@@ -847,7 +847,7 @@ h2.title {
 }
 
 .productinfo h2 {
-    color: #FE980F;
+    color: #5c5b5b;
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
     font-weight: 700;
@@ -911,8 +911,8 @@ h2.title {
 }
 
 .product-overlay .add-to-cart:hover {
-    background: #fff;
-    color: #FE980F;
+    background: rgb(223, 69, 8);
+    color: #e4dcd9;
 }
 
 .product-overlay p {
