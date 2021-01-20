@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 20 jan. 2021 à 21:29
+-- Généré le : jeu. 21 jan. 2021 à 00:30
 -- Version du serveur :  10.4.13-MariaDB
 -- Version de PHP : 7.2.32
 
@@ -218,7 +218,30 @@ INSERT INTO `produit` (`PROID`, `PRODESC`, `PROQTY`, `ORIGINALPRICE`, `PROPRICE`
 (201770, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', 20, 2000, 2300, 28, 'uploaded_photos/ipad6.jpg', 'Available', 'samsung'),
 (201771, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', 18, 1400, 1600, 20, 'uploaded_photos/pc1.jpg', 'Available', 'apple'),
 (201772, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', 5, 5000, 6000, 20, 'uploaded_photos/pc2.jpg', 'Available', 'apple'),
-(201773, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', 8, 8000, 8500, 20, 'uploaded_photos/pc3.jpg', 'Available', 'apple');
+(201773, 'See-through back shows off original design of device. Robust clear bumper provides better grip for comfortable handling. Raised lips protects front display from potential scratches and damage. Attach hand or neck straps with the built-in dual QuikCatch la', 8, 8000, 8500, 20, 'uploaded_photos/pc3.jpg', 'Available', 'apple'),
+(201774, 'Barcode Printer 204mm 280mm 164mm Bluetooth/USB', 20, 600, 1000, 23, 'uploaded_photos/p1.jpg', 'Available', 'Advantech'),
+(201775, 'Barcode Printer 213mm 314mm 188mm RS-232/USB 2.0', 50, 800, 1200, 23, 'uploaded_photos/p2.jpg', 'Available', 'Advantech'),
+(201776, 'Inkjet printers can produce outstanding photos, crisp multi-page office documents, and everything in between. Find your ideal inkjet with these handy shopping tips and our top picks, drawn from PC Labs\' reviews.', 80, 800, 1000, 23, 'uploaded_photos/printer3.jpg', 'Available', 'hp'),
+(201777, 'Kindle Paperwhite | Best Tech Gifts 2016 | POPSUGAR Tech Photo 12', 15, 1600, 2200, 23, 'uploaded_photos/printer4.jpg', 'Available', 'hp'),
+(201778, 'Best Tech Gifts 2016 | POPSUGAR Tech Photo 12', 60, 2200, 2300, 23, 'uploaded_photos/printer5.jpg', 'Available', 'photo cube'),
+(201780, 'USB Flash Drives USB 2.0/USB 3.0/USB 3.1 8GB', 100, 35, 55, 24, 'uploaded_photos/f10.jpg', 'Available', 'Kingston Technology'),
+(201781, 'Cheap USB Flash Drives, Buy Quality Computer & Office Directly from China Suppliers:Fashion Real Capacity Usb Flash Drive 32GB 64GB Crystal Pen Drive 16GB Usb Stick 8GB Pendrive Memory Stick U Disk Flash Drive Enjoy ?Free Shipping Worldwide! ?Limited Time', 5, 100, 120, 24, 'uploaded_photos/f3.jpg', 'Available', 'usb crystal'),
+(201782, 'Product Type: Flash DiskModel Number: PD098Style: RectangleStyle: StickPackage: YesProduct Weight: 30GMaterial: MetalBrand Name: DMEncryption: NoInterface Type: TYPE-CTime to market: Dec 2016Products Status: Stock', 80, 50, 70, 24, 'uploaded_photos/f4.jpg', 'Available', 'DiskModel '),
+(201783, 'This watermelon slice is one of the cutest ways you can transfer your files. It\'s a normal USB thumb drive that looks like a juicy slice of watermelon. It looks good enough to eat!', 120, 80, 100, 0, 'uploaded_photos/f5.jpg', 'Available', 'USB Flash Drives'),
+(201784, 'paris usb', 120, 50, 70, 24, 'uploaded_photos/f6.jpg', 'Available', 'USB Flash Drives'),
+(201785, 'Sandisk SDDDC2 Extreme Type-C 256GB 128GB 64GB Dual OTG USB Flash Drive 32GB Pen Drive USB Stick Micro USB Flash Type C 16GB\r\n', 120, 50, 70, 24, 'uploaded_photos/f7.jpg', 'Available', 'USB Flash Drives'),
+(201786, '1M 2M 3M 3ft Colorful Mobile Phone Cables Mini Micro Usb Cable Durable Braided Charger For Android Smartphone Micro USB Cable', 180, 14, 24, 24, 'uploaded_photos/u7.jpg', 'Available', 'usb cable '),
+(201787, 'Type:Charge\r\nBrand Name:OEM\r\nHas Retail Package:No\r\nModel Number:For Micro USB charging cable\r\nweight :20g', 156, 19, 25, 24, 'uploaded_photos/u5.jpg', 'Available', 'usb cable '),
+(201788, '2in1 USB-C Type C to 3.5mm Jack AUX Audio Cable Charging Cable Headphone Adapter - Gold, For Nubia Z 17 #CellPhonesAccessories #CellPhoneAccessories #CablesAdapters # #', 62, 90, 120, 24, 'uploaded_photos/u3.jpg', 'Available', '2in1'),
+(201789, 'Color:	Blanco y Negro\r\nTipo:	Protectores de cables', 15000, 120, 180, 24, 'uploaded_photos/u4.jpg', 'Available', 'Talla'),
+(201790, 'Brand Name: BASEUSConnector B: TYPE-CMaximum Current: 3AOrigin: CN(Origin)Surface Material: NylonConnector A: USB AFeatures: Alloy ConnectorHas Retail Package: YesItem Name: Baseus Quick Charge 3.0 USB Type C CableMaterial: Aluminum Alloy + TPE + Nylon Br', 46, 90, 120, 24, 'uploaded_photos/u8.jpg', 'Available', 'Samsung '),
+(201791, 'Looking for techie gadgets for the technology-obsessed teens? Here are 20 cool tech gifts for teens. Perfect for birthday, Christmas, and holiday season.', 150, 1500, 1800, 27, 'uploaded_photos/w1.jpg', 'Available', 'kohl\'s'),
+(201792, 'Waterproof Smart Watch for Fitness Price: 23.00 & FREE Shipping #fitness                      ', 1230, 2000, 2600, 27, 'uploaded_photos/w5.jpg', 'Available', 'Waterproof'),
+(201793, 'Want to make a statement? Then you need our stainless steel metal Apple Watch band: professional style made with heavy weighted metal, available in various colors.', 920, 1585, 2000, 27, 'uploaded_photos/w2.jpg', 'Available', 'STAINLESS STEEL '),
+(201794, 'So you’ve bought your first Apple Watch, congrats! There are a whole host of ways to make your Apple Watch unique to you. Read on for more info on how to select the best strap for your lifestyle and for how to ensure that it will fit your Apple Watch.', 960, 5000, 5800, 27, 'uploaded_photos/ffff.jpg', 'Available', 'Apple'),
+(201795, 'Fossil Q Gen 5 Julianna HR Smartwatch - Black N/A', 189, 1520, 2000, 27, 'uploaded_photos/ppppp.jpg', 'Available', 'Fossil'),
+(201796, 'An outstanding hybrid (mechanical + digital) watch face with uniquely animated gears and whirlwind. TREASURE is distinguished by its exquisite graphics and smooth animations. Polished to perfection, elegant and impressive. Stay in style. Enjoy the whirlwi', 963, 2200, 2400, 27, 'uploaded_photos/aaaaaaaa.jpg', 'Available', 'Premium'),
+(201797, 'This futuristic watch not only works great but also performs well, offering all the apps you want while fitting snugly on the wrist. Sony smart watch review', 78, 3000, 3500, 27, 'uploaded_photos/sony.jpg', 'Available', 'SONY');
 
 -- --------------------------------------------------------
 
@@ -273,7 +296,30 @@ INSERT INTO `promo` (`PROMOID`, `PROID`, `PRODISCOUNT`, `PRODISPRICE`, `PROBANNE
 (34, 201770, 0, 2300, 0, 0),
 (35, 201771, 0, 1600, 0, 0),
 (36, 201772, 0, 6000, 0, 0),
-(37, 201773, 0, 8500, 0, 0);
+(37, 201773, 0, 8500, 0, 0),
+(38, 201774, 0, 1000, 0, 0),
+(39, 201775, 0, 1200, 0, 0),
+(40, 201776, 0, 1000, 0, 0),
+(41, 201777, 0, 2200, 0, 0),
+(42, 201778, 0, 2300, 0, 0),
+(44, 201780, 0, 55, 0, 0),
+(45, 201781, 0, 120, 0, 0),
+(46, 201782, 0, 70, 0, 0),
+(47, 201783, 0, 100, 0, 0),
+(48, 201784, 0, 70, 0, 0),
+(49, 201785, 0, 70, 0, 0),
+(50, 201786, 0, 24, 0, 0),
+(51, 201787, 0, 25, 0, 0),
+(52, 201788, 0, 120, 0, 0),
+(53, 201789, 0, 180, 0, 0),
+(54, 201790, 0, 120, 0, 0),
+(55, 201791, 0, 1800, 0, 0),
+(56, 201792, 0, 2600, 0, 0),
+(57, 201793, 0, 2000, 0, 0),
+(58, 201794, 0, 5800, 0, 0),
+(59, 201795, 0, 2000, 0, 0),
+(60, 201796, 0, 2400, 0, 0),
+(61, 201797, 0, 3500, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -295,7 +341,7 @@ CREATE TABLE `tblautonumber` (
 --
 
 INSERT INTO `tblautonumber` (`ID`, `AUTOSTART`, `AUTOINC`, `AUTOEND`, `AUTOKEY`, `AUTONUM`) VALUES
-(1, '2017', 1, 74, 'PROID', 10),
+(1, '2017', 1, 98, 'PROID', 10),
 (2, '0', 1, 106, 'ordernumber', 0);
 
 -- --------------------------------------------------------
@@ -457,7 +503,7 @@ ALTER TABLE `lignecommande`
 -- AUTO_INCREMENT pour la table `promo`
 --
 ALTER TABLE `promo`
-  MODIFY `PROMOID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `PROMOID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- AUTO_INCREMENT pour la table `tblautonumber`
