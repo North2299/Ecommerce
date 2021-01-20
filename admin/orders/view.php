@@ -106,17 +106,17 @@
                         </td>
                     </tr>
 
-                    <tr>        
+                <!--    <tr>        
                         <td>
                             <strong>
-                                <!-- <span class="glyphicon glyphicon-eye-open text-primary"></span>  -->
+                                <!-- <span class="glyphicon glyphicon-eye-open text-primary"></span>  
                                 Zipcode                                                
                             </strong>
                         </td>
                         <td class="text-primary">
-                            <?php echo ': '.$singlecustomer->ZIPCODE; ?>
+                            <//?php echo ': '.$singlecustomer->ZIPCODE; ?>
                         </td>
-                    </tr>
+                    </tr> -->
                     
  
 				

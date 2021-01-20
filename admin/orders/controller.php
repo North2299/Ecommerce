@@ -120,19 +120,16 @@ function doInsert(){
 		if ($_GET['actions']=='confirm') {
 							# code...
 				$status	= 'Confirmed';	
-				$remarks ='Your order has been confirmed.';
 				$delivered = Date('Y-m-d');
 
 		}elseif ($_GET['actions']=='deliver') {
 							# code...
 				$status	= 'Delivered';	
-				$remarks ='Your order has been delivered.';
 				$delivered = Date('Y-m-d');
 				 
 		}elseif ($_GET['actions']=='cancel'){
 			// $order = New Order();
 				$status	= 'Cancelled';
-				$remarks ='Your order has been cancelled due to lack of communication and incomplete information.';
 		}
 			
 			$order = New Order();
@@ -141,9 +138,8 @@ function doInsert(){
 
 			$summary = New Summary();
 			$summary->ORDEREDSTATS       = $status;
-			$summary->ORDEREDREMARKS     = $remarks;
 			$summary->CLAIMEDADTE 		 = $delivered;
-			$summary->HVIEW 			 = 0;
+			//$summary->HVIEW 			 = 0;
 			$summary->update($_GET['id']);
 
 
@@ -156,9 +152,9 @@ function doInsert(){
 			$cur = $mydb->loadSingleResult();
  
 
-	        $sql = "INSERT INTO `messageout` (`Id`, `MessageTo`, `MessageFrom`, `MessageText`) VALUES (Null, '".$cur->PHONE."','Janno','FROM Bachelor of Science and Entrepreneurs : Your order has been '".$status. "'. The amount is '".$cur->PAYMENT. "')";
+	       /* $sql = "INSERT INTO `messageout` (`Id`, `MessageTo`, `MessageFrom`, `MessageText`) VALUES (Null, '".$cur->PHONE."','Janno','FROM Bachelor of Science and Entrepreneurs : Your order has been '".$status. "'. The amount is '".$cur->PAYMENT. "')";
 	        $mydb->setQuery($sql);
-	        $mydb->execute();
+	        $mydb->execute();*/
 
 
 

@@ -371,7 +371,7 @@ if (isset($_POST['updateid'])){
                     </div>
                   </div>
 
-                  <div class="form-group">
+                <!--  <div class="form-group">
                     <div class="col-md-10">
                       <label class="col-md-4 control-label" for=
                       "ZIPCODE">Zip Code:</label>
@@ -381,7 +381,7 @@ if (isset($_POST['updateid'])){
                             "Zip Code" type="number" value="">
                       </div>
                     </div>
-                  </div>
+                  </div>-->
  
                   <div class="form-group">
                     <div class="col-md-10">

@@ -35,12 +35,12 @@
                     <div class="contact-info">
                         <h2 class="title text-center">Contact Info</h2>
                         <address>
-                            <p>E-Shopper Inc.</p>
-                            <p>935 W. Webster Ave New Streets Chicago, IL 60614, NY</p>
-                            <p>Newyork USA</p>
-                            <p>Mobile: +2346 17 38 93</p>
-                            <p>Fax: 1-714-252-0026</p>
-                            <p>Email: info@e-shopper.com</p>
+                            <p>Info-Shop</p>
+                            <p>km 4 Route de la Soukra, Sfax 3038 </p>
+                            <p>tunisia-Sfax</p>
+                            <p>Mobile: +216 12 345 678</p>
+                            <p>Fax: +216 12 345 678</p>
+                            <p>Email: Info-Shop@gmail.com</p>
                         </address>
                         <div class="social-networks">
                             <h2 class="title text-center">Social Networking</h2>

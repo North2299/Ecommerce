@@ -19,7 +19,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="panel panel-default">
+                                <!--div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
                                             <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Set Delivery Fee</a>
@@ -30,7 +30,7 @@
                                         <?php include "listlocation.php"; ?>
                                        </div>
                                     </div>
-                                </div>
+                                </div>-->
                                 <!-- <div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">

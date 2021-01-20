@@ -250,7 +250,6 @@ var table = document.getElementById('table');
         var CITYADD=document.forms["personal"]["CITYADD"];
         var EMAIL=document.forms["personal"]["EMAIL"];
         var PHONE=document.forms["personal"]["PHONE"]; 
-        var ZIPCODE=document.forms["personal"]["ZIPCODE"]; 
         var CUSUNAME=document.forms["personal"]["CUSUNAME"]; 
         var CUSPASS=document.forms["personal"]["CUSPASS"]; 
         var CUSPHOTO=document.forms["personal"]["image"];

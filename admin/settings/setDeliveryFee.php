@@ -1,6 +1,6 @@
 <?php  
 
-    if (!isset($_SESSION['USERID'])){
+  /*  if (!isset($_SESSION['USERID'])){
       redirect(web_root."index.php");
      }
 
@@ -150,7 +150,7 @@
 
        
 <?php   }
-
+*/
 ?>
 
 

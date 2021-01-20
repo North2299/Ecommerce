@@ -1,5 +1,5 @@
 <?php
-		check_message(); 
+	/*	check_message(); 
 		?> 
 		 
 		<div class="row">

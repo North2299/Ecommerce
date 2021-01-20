@@ -94,10 +94,10 @@ $query = "SELECT * FROM `commande` s ,`client` c
 						echo '<tr>';  
 				  		echo '<td ><img src="'.web_root.'admin/products/'. $result->IMAGES.'" width="60px" height="60px" title="'.$result->PRODESC.'"/></td>';
 				  	 	echo '<td>'. $result->PRODESC.'</td>';
-				  		echo '<td> &#8369 '.number_format($result->PROPRICE,2).' </td>';
+				  		echo '<td> '.number_format($result->PROPRICE,2).' DT</td>';
 				  		echo '<td align="center" >'. $result->ORDEREDQTY.'</td>';
 				  		?>
-				  		 <td> &#8369 <output><?php echo number_format($result->ORDEREDPRICE,2); ?></output></td> 
+				  		 <td>  <output><?php echo number_format($result->ORDEREDPRICE,2); ?>DT</output></td> 
 				  		<?php
 				  		echo '<td id="status" >'. $result->ORDEREDSTATS.'</td>';
 				  	 	echo '</tr>';

@@ -100,15 +100,11 @@ $singleuser = $user->single_user($_SESSION['USERID']);
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                         <?php echo $_SESSION['U_NAME']; ?> <img title="profile image" width="23px" height="17px" src="<?php echo web_root.'admin/user/'.$singleuser ->USERIMAGE ?>">  
+                         <?php echo $_SESSION['U_NAME']; ?>  
                             
                     </a>
                     <ul class="dropdown-menu dropdown-acnt">
-
-
-                    
-
-                      <div class="divtxt">
+                     
                         <li><a href="<?php echo web_root; ?>admin/user/index.php?view=edit&id=<?php echo $_SESSION['USERID']; ?>"> <?php echo $_SESSION['U_NAME']; ?> </a>
                       <li><a title="Edit" href="<?php echo web_root; ?>admin/user/index.php?view=edit&id=<?php echo $_SESSION['USERID']; ?>"  >Edit My Profile</a>
                                     
@@ -116,7 +112,7 @@ $singleuser = $user->single_user($_SESSION['USERID']);
                           </li>
                            <li><a href="<?php echo web_root; ?>admin/logout.php"><i class="fa fa-sign-out fa-fw"></i> Log Out</a>
                         </li> 
-                  </div>
+                 
                      
                          
                     </ul>
@@ -392,5 +388,5 @@ $('#date_picker').datetimepicker({
   
   
 </body> 
-      <footer><p  style="text-align: center;font-weight: bold;">Copyright &copy; Bachelor of Science and Entrepreneurs </p></footer>
+      <footer><p  style="text-align: center;font-weight: bold;">Copyright &copy Mariem-Taha-Maroua-Ranya </p></footer>
 </html>

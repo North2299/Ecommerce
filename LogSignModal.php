@@ -24,6 +24,7 @@
                        <div class="panel panel-pup">
                         <div class="panel-heading">
                             Login Details
+                            <?php echo check_message(); ?>
                         </div>
                         <div class="panel-body">
 

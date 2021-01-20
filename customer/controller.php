@@ -204,7 +204,6 @@ function doInsert(){
 			$summary->PAYMENT 		= $_POST['alltot'];
 			$summary->ORDEREDSTATS 	= 'Pending';
 			$summary->CLAIMEDDATE		= $_POST['CLAIMEDDATE'];
-			$summary->ORDEREDREMARKS 	= 'Your order is on process.';
 			$summary->HVIEW 			= 0	;
 			$summary->create();
 		  }
@@ -232,7 +231,7 @@ function doInsert(){
 
 		  $query ="UPDATE `wishlist` SET `WISHSTATS`=1  WHERE `WISHLISTID`=" .$_GET['wishid'];
 	      $mydb->setQuery($query);
-	      $res = $mydb->executeQuery();
+	      $res = $mydb->execute();
 		 if (isset($res)){
 		 		message("Product has been removed in your wishlist", "success"); 		 
 			redirect(web_root."index.php?q=profile");

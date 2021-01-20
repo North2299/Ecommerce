@@ -39,7 +39,7 @@ if (isset($_POST['ordernumber'])){
 
 // unsetting notify msg
 $summary = New Summary();
-$summary->HVIEW = 1;
+//$summary->HVIEW = 1;
 $summary->update($_SESSION['ordernumber']);  
 
 // end
@@ -236,12 +236,6 @@ $query = "SELECT * FROM `commande` s ,`client` c
 		  if($cur->ORDEREDSTATS=="Confirmed"){
 		  ?>
 		   <hr/> 
-		  <div class="row">
-		 		 <p>Please print this as a proof of purchased</p><br/>
-		  	  <p>We hope you enjoy your purchased products. Have a nice day!</p>
-		  	  <p>Sincerely.</p>
-		  	
-		  </div>
 		  <?php }?>
   </div> 
 

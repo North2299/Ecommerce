@@ -17,9 +17,9 @@ switch ($view) {
 		$content    = 'setDeliveryFee.php';		
 		break;
 
-	case 'edit' :
+	/*case 'edit' :
 		$content    = 'setDeliveryFee.php';		
-		break;
+		break;*/
     case 'view' :
 		$content    = 'view.php';		
 		break;

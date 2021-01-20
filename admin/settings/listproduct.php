@@ -44,14 +44,13 @@
 				  		echo '<td> &#8369 '.  number_format($result->PRODISPRICE,2).'</td>';
 				  		// echo '<td width="4%">'. $result->PROQTY.'</td>'; .
 				  		
-				  		if ($result->PROSTATS=='Available'){
+				  	/*	if ($result->PROSTATS=='Available'){
 				  			$stats = 'Available';
 				  		}else{
 				  			$stats = 'NotAvailable';
-				  		}
+				  		}*/
 				  		echo
 				  		 '<td align="left">
-							<a href="'.web_root.'admin/settings/controller.php?action=editStatus&id='.$result->PROID.'&stats='.$stats.'" class="btn btn-primary btn-xs">'.$stats.'</a>
 							<a href="setDiscount.php?id='.$result->PROID.'" data-toggle="lightbox"  class="btn btn-primary btn-xs">Set Discount</a>
 				  		 </td>';
 				  	} 

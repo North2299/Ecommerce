@@ -82,7 +82,7 @@ function doInsert(){
 						$product->PROQTY		= $_POST['PROQTY'];
 						$product->ORIGINALPRICE	= $_POST['ORIGINALPRICE']; 
 						$product->PROPRICE		= $_POST['PROPRICE']; 
-						$product->PROSTATS		= 'Available';
+						//$product->PROSTATS		= 'Available';
 						$product->create();
 						// }
 
@@ -115,12 +115,12 @@ function doInsert(){
 	function doEdit(){
 		if (@$_GET['stats']=='NotAvailable'){
 			$product = New Product();
-			$product->PROSTATS	= 'Available';
+			//$product->PROSTATS	= 'Available';
 			$product->update(@$_GET['id']);
 
 		}elseif(@$_GET['stats']=='Available'){
 			$product = New Product();
-			$product->PROSTATS	= 'NotAvailable';
+			//$product->PROSTATS	= 'NotAvailable';
 			$product->update(@$_GET['id']);
 		}else{
 
@@ -229,10 +229,10 @@ function doInsert(){
 
 
 	function setBanner(){
-		$promo = New Promo();
+	/*	$promo = New Promo();
 		$promo->PROBANNER  =1;  
 		$promo->update($_POST['PROID']);
-
+*/
 	}
 
  	function setDiscount(){
@@ -241,7 +241,7 @@ function doInsert(){
 		$promo = New Promo();
 		$promo->PRODISCOUNT  = $_POST['PRODISCOUNT']; 
 		$promo->PRODISPRICE  = $_POST['PRODISPRICE']; 
-		$promo->PROBANNER  =1;    
+		//$promo->PROBANNER  =1;    
 		$promo->update($_POST['PROID']);
 
 		msgBox("Discount has been set.");
@@ -256,7 +256,7 @@ function doInsert(){
 		$promo = New Promo();
 		$promo->PRODISCOUNT  = $_POST['PRODISCOUNT']; 
 		$promo->PRODISPRICE  = $_POST['PRODISPRICE']; 
-		$promo->PROBANNER  =1;    
+		//$promo->PROBANNER  =1;    
 		$promo->update($_POST['PROID']);
 
 		msgBox("Discount has been set.");

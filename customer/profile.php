@@ -119,8 +119,6 @@
                                             <?php echo  $result->PAYMENTMETHOD; ?></td>
                                             <td>
                                             <?php echo  $result->ORDEREDSTATS; ?></td>
-                                            <td>
-                                            <?php echo  $result->ORDEREDREMARKS; ?></td>
                                             <td class="tooltip-demo">
                                                 <a class=
                                                 "orderid btn btn-pup btn-xs"

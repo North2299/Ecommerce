@@ -134,26 +134,6 @@
         </div>
     </div>
 
-<!--      <div class="col-md-12">
-        <div class="col-md-6">
-           <label><?php echo $res->PROVINCE; ?></label> 
-               <p>Province::</p> 
-        </div>
-        <div class="col-md-6">
-           <label><?php echo $res->COUNTRY; ?></label> 
-               <p>Country::</p>  
-        </div>
-    </div>
- -->
-    <!--  <div class="col-md-12">
-        <div class="col-md-6">
-          <label><?php echo $res->ZIPCODE; ?></label> 
-               <p>Zip Code::</p>
-        </div>
-        <div class="col-md-6">
-          
-        </div>
-    </div> -->
 
   
 
