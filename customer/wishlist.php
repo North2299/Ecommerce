@@ -4,7 +4,7 @@
                       
                     <tbody>
                         <?php 
-                            $query = "SELECT * FROM `produit` P , `tblwishlist` W , `client`  C , `promo` PR, `categorie` CT  WHERE P.`PROID`=W.`PROID` AND W.`CUSID`=C.`CUSTOMERID`  AND P.`PROID`=PR.`PROID` AND P.`CATEGID`=CT.`CATEGID` AND WISHSTATS=0 AND  `CUSTOMERID`=".$_SESSION['CUSID'] ." ORDER BY `WISHDATE` desc ";
+                            $query = "SELECT * FROM `produit` P , `wishlist` W , `client`  C , `promo` PR, `categorie` CT  WHERE P.`PROID`=W.`PROID` AND W.`CUSID`=C.`CUSTOMERID`  AND P.`PROID`=PR.`PROID` AND P.`CATEGID`=CT.`CATEGID` AND WISHSTATS=0 AND  `CUSTOMERID`=".$_SESSION['CUSID'] ." ORDER BY `WISHDATE` desc ";
                           $mydb->setQuery($query);
                           $cur = $mydb->loadResultList();
                        

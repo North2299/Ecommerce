@@ -79,7 +79,7 @@ check_message();
                                   <td>
                                     <input type="hidden"    id ="PROPRICE<?php echo $result->PROID;  ?>" name="PROPRICE<?php echo $result->PROID; ?>" value="<?php echo  $result->PRODISPRICE ; ?>" >
                                      
-                                  &#8369  <?php echo  $result->PRODISPRICE ; ?>
+                                   <?php echo  $result->PRODISPRICE ; ?>DT
                                   </td>
                                   <td class="input-group custom-search-form" >
                                        <input type="hidden" maxlength="3" class="form-control input-sm"  autocomplete="off"  id ="ORIGQTY<?php echo $result->PROID;  ?>" name="ORIGQTY<?php echo $result->PROID; ?>" value="<?php echo $result->PROQTY; ?>"   placeholder="Search for...">
@@ -94,7 +94,7 @@ check_message();
                                       
                                         <input type="hidden"    id ="TOT<?php echo $result->PROID;  ?>" name="TOT<?php echo $result->PROID; ?>" value="<?php echo  $result->PRODISPRICE ; ?>" >
                                    
-                                     <td> &#8369 <output id="Osubtot<?php echo $result->PROID ?>"><?php echo   $_SESSION['gcCart'][$i]['price'] ; ?></output></td>
+                                     <td>  <output id="Osubtot<?php echo $result->PROID ?>"><?php echo   $_SESSION['gcCart'][$i]['price'] ; ?></output>DT</td>
                                 </tr>
          
                             <?php  
@@ -108,17 +108,14 @@ check_message();
                       </table> 
 
      
-                        <h3 align="right"> Total  &#8369<span id="sum">0</span></h3> 
+                        <h3 align="right"> Total  <span id="sum">0</span>DT</h3> 
     </div>
   </div>  
  
 </section>
 <section id="do_action">
     <div class="container">
-      <div class="heading">
-        <h3>What would you like to do next?</h3>
-        <p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
-      </div>
+      
       <div class="row">
      <form action="index.php?q=orderdetails" method="post">
    <a href="index.php?q=product" class="btn btn-default check_out pull-left ">

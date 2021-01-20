@@ -246,13 +246,9 @@ var table = document.getElementById('table');
   
         var FNAME=document.forms["personal"]["FNAME"];
         var LNAME=document.forms["personal"]["LNAME"];
-        var MNANE=document.forms["personal"]["MNAME"];
-        var CUSHOMENUM=document.forms["personal"]["CUSHOMENUM"];
-        var STREETADD=document.forms["personal"]["STREETADD"];
-        var BRGYADD=document.forms["personal"]["BRGYADD"];
+      //  var MNANE=document.forms["personal"]["MNAME"];
         var CITYADD=document.forms["personal"]["CITYADD"];
-        var PROVINCE=document.forms["personal"]["PROVINCE"];
-        var COUNTRY=document.forms["personal"]["COUNTRY"]; 
+        var EMAIL=document.forms["personal"]["EMAIL"];
         var PHONE=document.forms["personal"]["PHONE"]; 
         var ZIPCODE=document.forms["personal"]["ZIPCODE"]; 
         var CUSUNAME=document.forms["personal"]["CUSUNAME"]; 
@@ -274,29 +270,18 @@ var table = document.getElementById('table');
              return false;
         }
 
-
-        // if(CUSHOMENUM.value=="" || STREETADD.value=="" || BRGYADD.value=="" || CITYADD.value=="" || PROVINCE.value==""  || COUNTRY.value==""){
-        //     alert("Complete Address is required!");
-        //      return false;
-        // }
-
         if(PHONE.value==""){
              alert("Contact number is required!");
              return false;
         }
-        // if(ZIPCODE.value==""){
-        //   alert("Zip Code is required!");
-        //      return false;
-        // }
         if (CUSUNAME.value=="") {
           alert("Username is required!");
              return false;
         };
-
-        //  if (CUSPHOTO.value=="") {
-        //   alert("Picture is required!");
-        //      return false;
-        // };
+        if (EMAIL.value=="") {
+          alert("Email is required!");
+             return false;
+        };
 
 
 

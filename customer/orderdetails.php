@@ -40,7 +40,7 @@ $singlecustomer = $customer->single_customer($customerid);
         Address:
       </div>
       <div class="col-md-8 col-lg-10 col-sm-3" style="float:left">
-        <?php echo $singlecustomer->CUSHOMENUM . ' ' . $singlecustomer->STREETADD . ' ' .$singlecustomer->BRGYADD . ' ' . $singlecustomer->CITYADD . ' ' .$singlecustomer->PROVINCE . ' ' .$singlecustomer->COUNTRY; ?>
+        <?php echo  $singlecustomer->CITYADD ; ?>
       </div>
     </div>
 
@@ -84,8 +84,8 @@ $singlecustomer = $customer->single_customer($customerid);
                           <td><img src="admin/products/<?php echo $result->IMAGES ?>"  width="50px" height="50px"></td>
                           <td><?php echo $result->PRODESC ; ?></td>
                           <td align="center"><?php echo $_SESSION['gcCart'][$i]['qty']; ?></td>
-                          <td>&#8369 <?php echo  $result->PRODISPRICE ?></td>
-                          <td>&#8369 <output><?php echo $_SESSION['gcCart'][$i]['price']?></output></td>
+                          <td> <?php echo  $result->PRODISPRICE ?> DT</td>
+                          <td> <output><?php echo $_SESSION['gcCart'][$i]['price']?></output>DT</td>
                         </tr>
               <?php
               $tot +=$_SESSION['gcCart'][$i]['price'];
@@ -101,9 +101,9 @@ $singlecustomer = $customer->single_customer($customerid);
               </table>  
                 <div class="  pull-right">
                   <p align="right">
-                  <div > Total Price :   &#8369 <span id="sum">0.00</span></div>
-                   <div > Delivery Fee : &#8369 <span id="fee">0.00</span></div>
-                   <div> Overall Price : &#8369 <span id="overall"><?php echo $tot ;?></span></div>
+                  <div > Total Price :   <span id="sum">0.00</span>DT</div>
+                   <!--div > Delivery Fee :  <span id="fee">0.00</span>DT</div>
+                   <div> Overall Price :  <span id="overall"><//?php echo $tot ;?></span>DT</div-->
                    <input type="hidden" name="alltot" id="alltot" value="<?php echo $tot ;?>"/>
                   </p>  
                 </div>
@@ -114,10 +114,7 @@ $singlecustomer = $customer->single_customer($customerid);
  
  <section id="do_action">
     <div class="container">
-      <div class="heading">
-        <h3>What would you like to do next?</h3>
-        <p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
-      </div>
+    
       <div class="row">
          <div class="row">
                    <div class="col-md-7">
@@ -138,21 +135,14 @@ $singlecustomer = $customer->single_customer($customerid);
                                     
                                         <div class="col-md-12">
                                           <label class="col-md-4 control-label" for=
-                                          "PLACE">Place(Brgy/City):</label>
+                                          "PLACE">Adresse:</label>
 
-                                          <div class="col-md-8">
-                                           <select class="form-control paymethod" name="PLACE" id="PLACE" onchange="validatedate()"> 
-                                           <option value="0" >Select</option>
+                                          
                                               <?php 
-                                            $query = "SELECT * FROM `tblsetting` ";
-                                            $mydb->setQuery($query);
-                                            $cur = $mydb->loadResultList();
-
-                                            foreach ($cur as $result) {  
-                                              echo '<option value='.$result->DELPRICE.'>'.$result->BRGY.' '.$result->PLACE.' </option>';
-                                            }
+                                               echo  $singlecustomer->CITYADD  ;
+                                            
                                             ?>
-                                          </select>
+                                         
                                           </div>
                                         </div>  
                                       

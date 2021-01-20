@@ -69,10 +69,7 @@
                             </form>
 
                        </div>
-                        <div class="panel-footer">
-                          <?php check_message(); ?>
-                             <p align="left">&copy; <a href="https://bit.ly/2LPn9Wu">Janobe Source Code</a></p>
-                        </div>
+                        
                     </div> 
                   </div>
                   <!-- end login panel -->
@@ -138,7 +135,18 @@
                                             </div>
                                           </div>
  
-                                  
+                                          <div class="form-group">
+                                        <div class="col-md-10">
+                                          <label class="col-md-4 control-label" for=
+                                          "CUSUNAME">E-mail:</label>
+
+                                          <div class="col-md-8">
+                                             <input class="form-control input-sm"  id=" email" name="email" placeholder=
+                                                "email" type="text" value="">
+                                          </div>
+                                        </div>
+                                      </div> 
+
                                       <div class="form-group">
                                         <div class="col-md-10">
                                           <label class="col-md-4 control-label" for=
@@ -169,8 +177,8 @@
                                           "PASS"></label>
 
                                           <div class="col-md-8">
-                                          <p>Note</p>
-                                            Password must be atleast 8 to 15 characters. Only letter, numeric digits, underscore and first character must be a letter.
+                                          <p>Note :Password must be atleast 8 to 15 characters. Only letter, numeric digits, underscore and first character must be a letter.</p>
+                                            
                                          </div> 
                                         </div>
                                       </div> 
@@ -181,8 +189,7 @@
                                           "PHONE">Contact Number:</label>
 
                                           <div class="col-md-8">
-                                             <input class="form-control input-sm" id="PHONE" name="PHONE" placeholder=
-                                                "+63 0000000000" type="number" value="">
+                                             <input class="form-control input-sm" id="PHONE" name="PHONE" type="number" value="">
                                           </div>
                                         </div>
                                       </div>
@@ -195,7 +202,7 @@
                                           "image"></label>
                                           <div class="col-md-8">
                                         <p>  I <input type="checkbox" id="conditionterms" name="conditionterms" value="checkbox" />
-                                           <small>Agree with the <a class="toggle-modal"  onclick=" OpenPopupCenter('terms.php','Terms And Codition','600','600')"  ><b>TERMS AND CONDITION</b></a> of Janobe Source Code.</small>
+                                           <small>Agree with the <b>TERMS AND CONDITION</b></small>
                                            
                                           </div>
                                         </div>
@@ -216,9 +223,7 @@
                                         
 
                                      </div>
-                                    <div class="panel-footer">
-                                        <p align="left">&copy; <a href="https://bit.ly/2LPn9Wu">Janobe Source Code</a></p>
-                                    </div> 
+                                    
                             </div> 
                             <!-- end panel sign up -->
                         </form>  

@@ -54,7 +54,8 @@ function doInsert(){
 						$customer->LNAME 			= $_POST['LNAME']; 		
 						$customer->CITYADD  		= $_POST['CITYADD']; 
 						$customer->GENDER 			= $_POST['GENDER'];
-					 	$customer->PHONE 			= $_POST['PHONE']; 
+						 $customer->PHONE 			= $_POST['PHONE']; 
+						 $customer->EMAIL 			= $_POST['email'];
 						$customer->CUSUNAME			= $_POST['CUSUNAME'];
 						$customer->CUSPASS			= sha1($_POST['CUSPASS']);	
 						$customer->DATEJOIN 		= date('Y-m-d h-i-s');
@@ -78,7 +79,7 @@ function doInsert(){
 			 }else{
 			 	$proid = $_GET['proid'];
 			 	$id = mysqli_insert_id(); 
-			 	$query ="INSERT INTO `tblwishlist` (`PROID`, `CUSID`, `WISHDATE`, `WISHSTATS`)  VALUES ('{$proid}','{$id}','".DATE('Y-m-d')."',0)";
+			 	$query ="INSERT INTO `wishlist` (`PROID`, `CUSID`, `WISHDATE`, `WISHSTATS`)  VALUES ('{$proid}','{$id}','".DATE('Y-m-d')."',0)";
 			 	$mydb->setQuery($query);
 			 	$mydb->executeQuery();
 			 	 echo "<script> alert('You are now successfully registered. It will redirect to your profile.'); </script>";
@@ -96,19 +97,14 @@ function doInsert(){
 
 			
 			$customer = New Customer();
-			// $customer->CUSTOMERID 		= $_POST['CUSTOMERID'];
+			
 			$customer->FNAME 			= $_POST['FNAME'];
 			$customer->LNAME 			= $_POST['LNAME'];
-			// $customer->MNAME 			= $_POST['MNAME'];
-			// $customer->CUSHOMENUM 		= $_POST['CUSHOMENUM'];
-			// $customer->STREETADD		= $_POST['STREETADD'];
-			// $customer->BRGYADD 			= $_POST['BRGYADD'] ;			
+			// $customer->MNAME 			= $_POST['MNAME'];		
 			$customer->CITYADD  		= $_POST['CITYADD'];
-			// $customer->PROVINCE 		= $_POST['PROVINCE'];
-			// $customer->COUNTRY 			= $_POST['COUNTRY'];
 			$customer->GENDER 			= $_POST['GENDER'];
-		 	$customer->PHONE 			= $_POST['PHONE'];
-			// $customer->ZIPCODE 			= $_POST['ZIPCODE']; 
+			 $customer->PHONE 			= $_POST['PHONE'];
+			 $customer->EMAIL 			= $_POST['email'];
 			$customer->CUSUNAME			= $_POST['CUSUNAME'];
 			// $customer->CUSPASS			= sha1($_POST['CUSPASS']);	
 			$customer->update($_SESSION['CUSID']);
@@ -234,7 +230,7 @@ function doInsert(){
 		global $mydb;
 		if(isset($_GET['wishid'])){
 
-		  $query ="UPDATE `tblwishlist` SET `WISHSTATS`=1  WHERE `WISHLISTID`=" .$_GET['wishid'];
+		  $query ="UPDATE `wishlist` SET `WISHSTATS`=1  WHERE `WISHLISTID`=" .$_GET['wishid'];
 	      $mydb->setQuery($query);
 	      $res = $mydb->executeQuery();
 		 if (isset($res)){
@@ -256,7 +252,7 @@ function doInsert(){
 		$proid = $_GET['proid'];
 		$id =$_SESSION['CUSID'];
 
-		$query="SELECT * FROM `tblwishlist` WHERE  CUSID=".$id." AND `PROID` =" .$proid ;
+		$query="SELECT * FROM `wishlist` WHERE  CUSID=".$id." AND `PROID` =" .$proid ;
 		$mydb->setQuery($query);
 		$res = $mydb->executeQuery();
 		$maxrow = $mydb->num_rows($res);
@@ -265,7 +261,7 @@ function doInsert(){
 				message("Product is already added to your wishlist", "error"); 		 
 				redirect(web_root."index.php?q=profile"); 
 		}else{
-				$query ="INSERT INTO `tblwishlist` (`PROID`, `CUSID`, `WISHDATE`, `WISHSTATS`)  VALUES ('{$proid}','{$id}','".DATE('Y-m-d')."',0)";
+				$query ="INSERT INTO `wishlist` (`PROID`, `CUSID`, `WISHDATE`, `WISHSTATS`)  VALUES ('{$proid}','{$id}','".DATE('Y-m-d')."',0)";
 				$mydb->setQuery($query);
 				$mydb->executeQuery();
 			 

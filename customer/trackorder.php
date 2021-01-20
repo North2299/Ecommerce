@@ -62,7 +62,7 @@
                       </thead>   
                     <tbody>
                         <?php 
-                            $query = "SELECT * FROM `tblsummary`  
+                            $query = "SELECT * FROM `commande`  
                           WHERE ORDEREDNUM=".$_GET['id'] ." AND `CUSTOMERID`=".$_SESSION['CUSID'] ;
                           $mydb->setQuery($query);
                           $cur = $mydb->loadResultList();

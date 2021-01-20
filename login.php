@@ -57,7 +57,7 @@ if(isset($_POST['sidebarLogin'])){
            }else{
               $proid = $_POST['proid'];
               $id = mysql_insert_id(); 
-              $query ="INSERT INTO `tblwishlist` (`PROID`, `CUSID`, `WISHDATE`, `WISHSTATS`)  VALUES ('". $proid."','".$_SESSION['CUSID']."','".DATE('Y-m-d')."',0)";
+              $query ="INSERT INTO `wishlist` (`PROID`, `CUSID`, `WISHDATE`, `WISHSTATS`)  VALUES ('". $proid."','".$_SESSION['CUSID']."','".DATE('Y-m-d')."',0)";
               mysql_query($query) or die(mysql_error());
               redirect(web_root."index.php?q=profile");
              }

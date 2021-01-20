@@ -35,7 +35,7 @@ if (isset($_POST['ordernumber'])){
 }
 
 
-$query = "SELECT * FROM `tblsummary` s ,`client` c 
+$query = "SELECT * FROM `commande` s ,`client` c 
 				WHERE   s.`CUSTOMERID`=c.`CUSTOMERID` and ORDEREDNUM=".$_SESSION['ordernumber'];
 		$mydb->setQuery($query);
 		$cur = $mydb->loadSingleResult();
@@ -56,7 +56,7 @@ $query = "SELECT * FROM `tblsummary` s ,`client` c
 	</div>
 	<div class="row" style="margin:2%">
 		<div class="col-md-6">Name : <?php echo $cur->FNAME . ' '.  $cur->LNAME ;?></div>
-		<div class="col-md-6">Address:  <?php echo $cur->CUSHOMENUM . ' ' . $cur->STREETADD . ' ' .$cur->BRGYADD . ' ' . $cur->CITYADD . ' ' .$cur->PROVINCE . ' ' .$cur->COUNTRY; ?>
+		<div class="col-md-6">Address:  <?php echo   $cur->CITYADD ; ?>
      </div>
 	</div>
 		
@@ -82,7 +82,7 @@ $query = "SELECT * FROM `tblsummary` s ,`client` c
 				<?php
 				  $subtot =0;
 				  $query = "SELECT * 
-							FROM  `produit` p, categorie ct,  `client` c,  `lignecommande` o,  `tblsummary` s
+							FROM  `produit` p, categorie ct,  `client` c,  `lignecommande` o,  `commande` s
 							WHERE p.`CATEGID` = ct.`CATEGID` 
 							AND p.`PROID` = o.`PROID` 
 							AND o.`ORDEREDNUM` = s.`ORDEREDNUM` 
@@ -106,7 +106,7 @@ $query = "SELECT * FROM `tblsummary` s ,`client` c
 				?> 
 			</tbody> 
 		<?php 
-				 $query = "SELECT * FROM `tblsummary` s ,`client` c 
+				 $query = "SELECT * FROM `commande` s ,`client` c 
 				WHERE   s.`CUSTOMERID`=c.`CUSTOMERID` and ORDEREDNUM=".$_SESSION['ordernumber'];
 		$mydb->setQuery($query);
 		$cur = $mydb->loadSingleResult();

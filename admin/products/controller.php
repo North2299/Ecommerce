@@ -76,7 +76,6 @@ function doInsert(){
   				 	 	$product = New Product(); 
   				 	 	$product->PROID 		= $res->AUTO; 
 						$product->OWNERNAME 		= $_POST['OWNERNAME']; 
-						$product->OWNERPHONE 		= $_POST['OWNERPHONE'];
 						$product->IMAGES 		= $location; 
 						$product->PRODESC 		= $_POST['PRODESC'];
 						$product->CATEGID	    = $_POST['CATEGORY'];
@@ -140,8 +139,7 @@ function doInsert(){
 						$product = New Product();
 						// $product->PROMODEL 		= $_POST['PROMODEL']; 
 						// $product->PRONAME 		= $_POST['PRONAME']; 
-						$product->OWNERNAME 		= $_POST['OWNERNAME']; 
-						$product->OWNERPHONE 		= $_POST['OWNERPHONE']; 
+						$product->OWNERNAME 		= $_POST['OWNERNAME'];  
 						$product->PRODESC 		= $_POST['PRODESC'];
 						$product->CATEGID	    = $_POST['CATEGORY'];
 						$product->PROQTY		= $_POST['PROQTY'];
@@ -175,8 +173,8 @@ function doInsert(){
 			$product->delete($id[$i]);
  
 
-			$stockin = New StockIn();
-			$stockin->delete($id[$i]);
+		//	$stockin = New StockIn();
+			//$stockin->delete($id[$i]);
 
 			$promo = New Promo();   
 			$promo->delete($id[$i]);

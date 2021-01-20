@@ -125,17 +125,8 @@
         </div>
     </div>
 
-<!--      <div class="col-md-12">
-        <div class="col-md-6">
-              <label><?php echo $res->CUSHOMENUM; ?></label> 
-               <p>Home#::</p> 
-        </div>
-        <div class="col-md-6">
-          <label><?php echo $res->STREETADD; ?></label> 
-               <p>STREET/Village::</p> 
-        </div>
-    </div>
--->
+
+
      <div class="col-md-12"> 
         <div class="col-md-6">
            <label><?php echo $res->CITYADD; ?></label> 

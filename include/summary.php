@@ -1,7 +1,7 @@
 <?php
 require_once(LIB_PATH.DS.'database.php');
 class Summary {
-	protected static  $tblname = "tblsummary";
+	protected static  $tblname = "commande";
 
 	function dbfields() {
 		global $mydb;

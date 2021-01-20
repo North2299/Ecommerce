@@ -45,7 +45,7 @@ $summary->update($_SESSION['ordernumber']);
 // end
 
 
-$query = "SELECT * FROM `tblsummary` s ,`client` c 
+$query = "SELECT * FROM `commande` s ,`client` c 
 		WHERE   s.`CUSTOMERID`=c.`CUSTOMERID` and ORDEREDNUM='".$_SESSION['ordernumber']."'";
 		$mydb->setQuery($query);
 		$cur = $mydb->loadSingleResult();
@@ -75,7 +75,7 @@ $query = "SELECT * FROM `tblsummary` s ,`client` c
 		 
  	 <div class="modal-body"> 
 <?php 
-	 $query = "SELECT * FROM `tblsummary` s ,`client` c 
+	 $query = "SELECT * FROM `commande` s ,`client` c 
 				WHERE   s.`CUSTOMERID`=c.`CUSTOMERID` and ORDEREDNUM=".$_SESSION['ordernumber'];
 		$mydb->setQuery($query);
 		$cur = $mydb->loadSingleResult();
@@ -105,7 +105,7 @@ $query = "SELECT * FROM `tblsummary` s ,`client` c
 		 	</div> -->
 		 	<div class="col-md-6">
 		 	<p>Name : <?php echo $cur->FNAME . ' '.  $cur->LNAME ;?></p>
-		 	<p>Address : <?php echo $cur->CUSHOMENUM . ' ' . $cur->STREETADD . ' ' .$cur->BRGYADD . ' ' . $cur->CITYADD . ' ' .$cur->PROVINCE . ' ' .$cur->COUNTRY; ?></p>
+		 	<p>Address : <?php echo  $cur->CITYADD ; ?></p>
 		 		<!-- <p>Contact Number : <?php echo $cur->CONTACTNUMBER;?></p> -->
 		 	</div>
 		 </div>
@@ -166,7 +166,7 @@ $query = "SELECT * FROM `tblsummary` s ,`client` c
 				<?php
 				 $subtot=0;
 				  $query = "SELECT * 
-							FROM  `produit` p, categorie ct,  `client` c,  `lignecommande` o,  `tblsummary` s
+							FROM  `produit` p, categorie ct,  `client` c,  `lignecommande` o,  `commande` s
 							WHERE p.`CATEGID` = ct.`CATEGID` 
 							AND p.`PROID` = o.`PROID` 
 							AND o.`ORDEREDNUM` = s.`ORDEREDNUM` 
@@ -200,17 +200,18 @@ $query = "SELECT * FROM `tblsummary` s ,`client` c
 			</tbody>
 		<tfoot >
 		<?php 
-				 $query = "SELECT * FROM `tblsummary` s ,`client` c 
+				 $query = "SELECT * FROM `commande` s ,`client` c 
 				WHERE   s.`CUSTOMERID`=c.`CUSTOMERID` and ORDEREDNUM=".$_SESSION['ordernumber'];
 		$mydb->setQuery($query);
 		$cur = $mydb->loadSingleResult();
 
-		if ($cur->PAYMENTMETHOD=="Cash on Delivery") {
+		/*if ($cur->PAYMENTMETHOD=="Cash on Delivery") {
 			# code...
-			$price = $cur->DELFEE;
+			//$price = $cur->DELFEE;
+
 		}else{
 			$price = 0.00;
-		}
+		}*/
 
 
 		// $tot =   $cur->PAYMENT  + $price;
@@ -225,9 +226,9 @@ $query = "SELECT * FROM `tblsummary` s ,`client` c
 
 		  	</div>
 		  	<div class="col-md-6 pull-right">
-		  		<p align="right">Total Price : &#8369 <?php echo number_format($subtot,2);?></p>
-		  		<p align="right">Delivery Fee : &#8369 <?php echo number_format($price,2); ?></p>
-		  		<p align="right">Overall Price : &#8369 <?php echo number_format($cur->PAYMENT,2); ?></p>
+		  		<p align="right">Total Price : <?php echo number_format($subtot,2);?>DT</p>
+		  	<!--	<p align="right">Delivery Fee :  <//?php echo number_format($price,2); ?>DT</p>
+		  		<p align="right">Overall Price :  <//?php echo number_format($cur->PAYMENT,2); ?>DT</p> -->
 		  	</div>
 		  </div>
 		 
@@ -239,7 +240,7 @@ $query = "SELECT * FROM `tblsummary` s ,`client` c
 		 		 <p>Please print this as a proof of purchased</p><br/>
 		  	  <p>We hope you enjoy your purchased products. Have a nice day!</p>
 		  	  <p>Sincerely.</p>
-		  	  <h4><a href="https://bit.ly/2LPn9Wu">Janobe Source Code</a></h4>
+		  	
 		  </div>
 		  <?php }?>
   </div> 

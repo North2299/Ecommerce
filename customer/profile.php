@@ -94,7 +94,7 @@
                                     </thead>
                                     <tbody>
                                         <?php 
-                                                                    $query = "SELECT * FROM `tblsummary`  
+                                                                    $query = "SELECT * FROM `commande`  
                                                                   WHERE  `CUSTOMERID`=".$_SESSION['CUSID'] ." ORDER BY   `ORDEREDNUM` desc ";
                                                                   $mydb->setQuery($query);
                                                                   $cur = $mydb->loadResultList();

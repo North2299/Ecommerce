@@ -151,24 +151,19 @@ if (isset($_SESSION['gcCart'])){
         <div class="row">
           <div class="col-sm-2">
             <div class="companyinfo">
-              <h2><span>e</span>-shopper</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+              <h2><span>info</span>-shop</h2>
             </div>
           </div>
           <div class="col-sm-7">
             <div class="col-sm-6">
               <div class="video-gallery text-center">
-                <a href="#"> 
-                    <iframe class="iframe-img"  src="https://www.youtube.com/embed/d8N21Q_UN4w"   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-                </a> 
+                
               </div>
             </div>
             
             <div class="col-sm-6">
               <div class="video-gallery text-center">
-                <a href="#"> 
-                   <iframe  class="iframe-img"  src="https://www.youtube.com/embed/aMDC3Da4KIA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-                </a> 
+                
               </div>
             </div>
           </div>
@@ -184,7 +179,6 @@ if (isset($_SESSION['gcCart'])){
     
     <div class="footer-widget">
       <div class="container">
-        <p>You can modify this section using your own personal information</p>
         <div class="row">
           <div class="col-sm-3">
             <div class="single-widget">
@@ -244,10 +238,7 @@ if (isset($_SESSION['gcCart'])){
     
     <div class="footer-bottom">
       <div class="container">
-        <div class="row">
-          <p class="pull-left">Modified by <span><a href="https://bit.ly/2LPn9Wu">Janobe Source Code</a></span></p>
-          <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
-        </div>
+       
       </div>
     </div>
     
