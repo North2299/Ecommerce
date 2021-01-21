@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 21 jan. 2021 à 00:30
+-- Généré le : jeu. 21 jan. 2021 à 10:19
 -- Version du serveur :  10.4.13-MariaDB
 -- Version de PHP : 7.2.32
 
@@ -32,16 +32,15 @@ CREATE TABLE `admin` (
   `U_NAME` varchar(122) NOT NULL,
   `U_USERNAME` varchar(122) NOT NULL,
   `U_PASS` varchar(122) NOT NULL,
-  `U_ROLE` varchar(30) NOT NULL,
-  `USERIMAGE` varchar(255) NOT NULL
+  `U_ROLE` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `admin`
 --
 
-INSERT INTO `admin` (`USERID`, `U_NAME`, `U_USERNAME`, `U_PASS`, `U_ROLE`, `USERIMAGE`) VALUES
-(126, 'Janobe Palacios', 'janobe', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrator', 'photos/10329236_874204835938922_6636897990257224477_n.jpg');
+INSERT INTO `admin` (`USERID`, `U_NAME`, `U_USERNAME`, `U_PASS`, `U_ROLE`) VALUES
+(126, 'Janobe Palacios', 'janobe', 'd033e22ae348aeb5660fc2140aec35850c4da997', 'Administrator');
 
 -- --------------------------------------------------------
 
@@ -79,11 +78,9 @@ CREATE TABLE `client` (
   `FNAME` varchar(30) NOT NULL,
   `LNAME` varchar(30) NOT NULL,
   `CITYADD` text NOT NULL,
-  `DBIRTH` date NOT NULL,
   `GENDER` varchar(10) NOT NULL,
   `PHONE` varchar(20) NOT NULL,
   `EMAIL` varchar(40) NOT NULL,
-  `ZIPCODE` int(6) NOT NULL,
   `CUSUNAME` varchar(20) NOT NULL,
   `CUSPASS` varchar(90) NOT NULL,
   `CUSPHOTO` varchar(255) NOT NULL,
@@ -95,11 +92,11 @@ CREATE TABLE `client` (
 -- Déchargement des données de la table `client`
 --
 
-INSERT INTO `client` (`CUSTOMERID`, `FNAME`, `LNAME`, `CITYADD`, `DBIRTH`, `GENDER`, `PHONE`, `EMAIL`, `ZIPCODE`, `CUSUNAME`, `CUSPASS`, `CUSPHOTO`, `TERMS`, `DATEJOIN`) VALUES
-(10, 'taha', 'chaari', 'sfax', '0000-00-00', 'Male', '51539047', '', 0, 'taha', '596afd7a600563c3c8a5845f6486bbf9d0999956', 'customer_image/120552415_343469200318978_837273095330120245_n.jpg', 1, '2021-01-14'),
-(11, 'mariem', 'zouari', 'sfax', '0000-00-00', 'Female', '55132701', 'marouachoura20@gmail.com', 0, 'mariem', '82e19fa12aab7cfc718a002fc82c0f074bf070e7', '', 1, '2021-01-20'),
-(12, 'maroua', 'choura', 'sfax1/sfax sidimansour', '0000-00-00', 'Female', '53906707', 'marouachoura20@gmail.com', 0, 'maroua', '82e19fa12aab7cfc718a002fc82c0f074bf070e7', '', 1, '2021-01-20'),
-(13, 'taha', 'chaari', 'sfax', '0000-00-00', 'Male', '55132701', 'tahachaari@enis.tn', 0, 'toutou', '82e19fa12aab7cfc718a002fc82c0f074bf070e7', '', 1, '2021-01-20');
+INSERT INTO `client` (`CUSTOMERID`, `FNAME`, `LNAME`, `CITYADD`, `GENDER`, `PHONE`, `EMAIL`, `CUSUNAME`, `CUSPASS`, `CUSPHOTO`, `TERMS`, `DATEJOIN`) VALUES
+(10, 'taha', 'chaari', 'sfax', 'Male', '51539047', '', 'taha', '596afd7a600563c3c8a5845f6486bbf9d0999956', 'customer_image/120552415_343469200318978_837273095330120245_n.jpg', 1, '2021-01-14'),
+(11, 'mariem', 'zouari', 'sfax', 'Female', '55132701', 'marouachoura20@gmail.com', 'mariem', '82e19fa12aab7cfc718a002fc82c0f074bf070e7', '', 1, '2021-01-20'),
+(12, 'maroua', 'choura', 'sfax1/sfax sidimansour', 'Female', '53906707', 'marouachoura20@gmail.com', 'maroua', '82e19fa12aab7cfc718a002fc82c0f074bf070e7', '', 1, '2021-01-20'),
+(13, 'taha', 'chaari', 'sfax', 'Male', '55132701', 'tahachaari@enis.tn', 'toutou', '82e19fa12aab7cfc718a002fc82c0f074bf070e7', '', 1, '2021-01-20');
 
 -- --------------------------------------------------------
 
@@ -115,30 +112,27 @@ CREATE TABLE `commande` (
   `PAYMENT` double NOT NULL,
   `PAYMENTMETHOD` varchar(30) NOT NULL,
   `ORDEREDSTATS` varchar(30) NOT NULL,
-  `ORDEREDREMARKS` varchar(125) NOT NULL,
-  `CLAIMEDADTE` datetime NOT NULL,
-  `HVIEW` tinyint(4) NOT NULL,
-  `USERID` int(11) NOT NULL
+  `CLAIMEDADTE` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `commande`
 --
 
-INSERT INTO `commande` (`SUMMARYID`, `ORDEREDDATE`, `CUSTOMERID`, `ORDEREDNUM`, `PAYMENT`, `PAYMENTMETHOD`, `ORDEREDSTATS`, `ORDEREDREMARKS`, `CLAIMEDADTE`, `HVIEW`, `USERID`) VALUES
-(1, '2019-08-21 06:24:24', 9, 93, 0, 'Cash on Delivery', 'Pending', 'Your order is on process.', '0000-00-00 00:00:00', 1, 0),
-(3, '2019-08-21 06:27:09', 9, 94, 269, 'Cash on Delivery', 'Confirmed', 'Your order has been confirmed.', '2019-08-21 00:00:00', 1, 0),
-(4, '2021-01-14 05:32:50', 10, 95, 289, 'Cash on Delivery', 'Pending', 'Your order is on process.', '0000-00-00 00:00:00', 0, 0),
-(5, '2021-01-14 05:33:20', 10, 96, 149, 'Cash on Delivery', 'Pending', 'Your order is on process.', '0000-00-00 00:00:00', 0, 0),
-(6, '0000-00-00 00:00:00', 0, 0, 0, '', '', '', '0000-00-00 00:00:00', 0, 0),
-(22, '2021-01-20 05:43:29', 12, 98, 1600, 'Cash on Delivery', 'Pending', 'Your order is on process.', '0000-00-00 00:00:00', 1, 0),
-(28, '2021-01-20 05:48:08', 12, 99, 8500, 'Cash on Delivery', 'Pending', 'Your order is on process.', '0000-00-00 00:00:00', 0, 0),
-(29, '2021-01-20 05:48:32', 12, 100, 1600, 'Cash on Delivery', 'Pending', 'Your order is on process.', '0000-00-00 00:00:00', 0, 0),
-(30, '2021-01-20 08:04:50', 13, 101, 6000, 'Cash on Delivery', 'Pending', 'Your order is on process.', '0000-00-00 00:00:00', 0, 0),
-(31, '2021-01-20 08:10:06', 13, 102, 2500, 'Cash on Delivery', 'Pending', 'Your order is on process.', '0000-00-00 00:00:00', 0, 0),
-(32, '2021-01-20 08:10:28', 13, 103, 12000, 'Cash on Delivery', 'Pending', 'Your order is on process.', '0000-00-00 00:00:00', 1, 0),
-(33, '2021-01-20 08:13:17', 13, 104, 6000, 'Cash on Delivery', 'Pending', 'Your order is on process.', '0000-00-00 00:00:00', 0, 0),
-(34, '2021-01-20 09:07:54', 13, 105, 1500, 'Cash on Delivery', 'Pending', 'Your order is on process.', '0000-00-00 00:00:00', 0, 0);
+INSERT INTO `commande` (`SUMMARYID`, `ORDEREDDATE`, `CUSTOMERID`, `ORDEREDNUM`, `PAYMENT`, `PAYMENTMETHOD`, `ORDEREDSTATS`, `CLAIMEDADTE`) VALUES
+(1, '2019-08-21 06:24:24', 9, 93, 0, 'Cash on Delivery', 'Pending', '0000-00-00 00:00:00'),
+(3, '2019-08-21 06:27:09', 9, 94, 269, 'Cash on Delivery', 'Confirmed', '2019-08-21 00:00:00'),
+(4, '2021-01-14 05:32:50', 10, 95, 289, 'Cash on Delivery', 'Pending', '0000-00-00 00:00:00'),
+(5, '2021-01-14 05:33:20', 10, 96, 149, 'Cash on Delivery', 'Pending', '0000-00-00 00:00:00'),
+(6, '0000-00-00 00:00:00', 0, 0, 0, '', '', '0000-00-00 00:00:00'),
+(22, '2021-01-20 05:43:29', 12, 98, 1600, 'Cash on Delivery', 'Pending', '0000-00-00 00:00:00'),
+(28, '2021-01-20 05:48:08', 12, 99, 8500, 'Cash on Delivery', 'Pending', '0000-00-00 00:00:00'),
+(29, '2021-01-20 05:48:32', 12, 100, 1600, 'Cash on Delivery', 'Pending', '0000-00-00 00:00:00'),
+(30, '2021-01-20 08:04:50', 13, 101, 6000, 'Cash on Delivery', 'Pending', '0000-00-00 00:00:00'),
+(31, '2021-01-20 08:10:06', 13, 102, 2500, 'Cash on Delivery', 'Pending', '0000-00-00 00:00:00'),
+(32, '2021-01-20 08:10:28', 13, 103, 12000, 'Cash on Delivery', 'Pending', '0000-00-00 00:00:00'),
+(33, '2021-01-20 08:13:17', 13, 104, 6000, 'Cash on Delivery', 'Pending', '0000-00-00 00:00:00'),
+(34, '2021-01-20 09:07:54', 13, 105, 1500, 'Cash on Delivery', 'Pending', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -253,73 +247,71 @@ CREATE TABLE `promo` (
   `PROMOID` int(11) NOT NULL,
   `PROID` int(11) NOT NULL,
   `PRODISCOUNT` double NOT NULL,
-  `PRODISPRICE` double NOT NULL,
-  `PROBANNER` tinyint(4) NOT NULL,
-  `PRONEW` tinyint(4) NOT NULL
+  `PRODISPRICE` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `promo`
 --
 
-INSERT INTO `promo` (`PROMOID`, `PROID`, `PRODISCOUNT`, `PRODISPRICE`, `PROBANNER`, `PRONEW`) VALUES
-(1, 201737, 0, 119, 0, 0),
-(2, 201738, 0, 199, 0, 0),
-(3, 201739, 0, 289, 0, 0),
-(4, 201740, 0, 149, 0, 0),
-(5, 201741, 0, 89, 0, 0),
-(6, 201742, 0, 287, 0, 0),
-(7, 201743, 0, 200000, 0, 0),
-(8, 201744, 0, 3000, 0, 0),
-(9, 201745, 0, 2300, 0, 0),
-(10, 201746, 0, 2000, 0, 0),
-(11, 201747, 0, 2300, 0, 0),
-(12, 201748, 0, 3000, 0, 0),
-(13, 201749, 0, 750, 0, 0),
-(14, 201750, 0, 2500, 0, 0),
-(15, 201751, 0, 2000, 0, 0),
-(16, 201752, 0, 1500, 0, 0),
-(17, 201753, 0, 500, 0, 0),
-(18, 201754, 0, 800, 0, 0),
-(22, 201758, 0, 1200, 0, 0),
-(23, 201759, 0, 1500, 0, 0),
-(24, 201760, 0, 2500, 0, 0),
-(25, 201761, 0, 2500, 0, 0),
-(26, 201762, 0, 3000, 0, 0),
-(27, 201763, 0, 1500, 0, 0),
-(28, 201764, 0, 600, 0, 0),
-(29, 201765, 0, 1700, 0, 0),
-(30, 201766, 0, 500, 0, 0),
-(31, 201767, 0, 1200, 0, 0),
-(32, 201768, 0, 1700, 0, 0),
-(33, 201769, 0, 1800, 0, 0),
-(34, 201770, 0, 2300, 0, 0),
-(35, 201771, 0, 1600, 0, 0),
-(36, 201772, 0, 6000, 0, 0),
-(37, 201773, 0, 8500, 0, 0),
-(38, 201774, 0, 1000, 0, 0),
-(39, 201775, 0, 1200, 0, 0),
-(40, 201776, 0, 1000, 0, 0),
-(41, 201777, 0, 2200, 0, 0),
-(42, 201778, 0, 2300, 0, 0),
-(44, 201780, 0, 55, 0, 0),
-(45, 201781, 0, 120, 0, 0),
-(46, 201782, 0, 70, 0, 0),
-(47, 201783, 0, 100, 0, 0),
-(48, 201784, 0, 70, 0, 0),
-(49, 201785, 0, 70, 0, 0),
-(50, 201786, 0, 24, 0, 0),
-(51, 201787, 0, 25, 0, 0),
-(52, 201788, 0, 120, 0, 0),
-(53, 201789, 0, 180, 0, 0),
-(54, 201790, 0, 120, 0, 0),
-(55, 201791, 0, 1800, 0, 0),
-(56, 201792, 0, 2600, 0, 0),
-(57, 201793, 0, 2000, 0, 0),
-(58, 201794, 0, 5800, 0, 0),
-(59, 201795, 0, 2000, 0, 0),
-(60, 201796, 0, 2400, 0, 0),
-(61, 201797, 0, 3500, 0, 0);
+INSERT INTO `promo` (`PROMOID`, `PROID`, `PRODISCOUNT`, `PRODISPRICE`) VALUES
+(1, 201737, 0, 119),
+(2, 201738, 0, 199),
+(3, 201739, 0, 289),
+(4, 201740, 0, 149),
+(5, 201741, 0, 89),
+(6, 201742, 0, 287),
+(7, 201743, 0, 200000),
+(8, 201744, 0, 3000),
+(9, 201745, 0, 2300),
+(10, 201746, 0, 2000),
+(11, 201747, 0, 2300),
+(12, 201748, 0, 3000),
+(13, 201749, 0, 750),
+(14, 201750, 0, 2500),
+(15, 201751, 0, 2000),
+(16, 201752, 0, 1500),
+(17, 201753, 0, 500),
+(18, 201754, 0, 800),
+(22, 201758, 0, 1200),
+(23, 201759, 0, 1500),
+(24, 201760, 0, 2500),
+(25, 201761, 0, 2500),
+(26, 201762, 0, 3000),
+(27, 201763, 0, 1500),
+(28, 201764, 0, 600),
+(29, 201765, 0, 1700),
+(30, 201766, 0, 500),
+(31, 201767, 0, 1200),
+(32, 201768, 0, 1700),
+(33, 201769, 0, 1800),
+(34, 201770, 0, 2300),
+(35, 201771, 0, 1600),
+(36, 201772, 0, 6000),
+(37, 201773, 0, 8500),
+(38, 201774, 0, 1000),
+(39, 201775, 0, 1200),
+(40, 201776, 0, 1000),
+(41, 201777, 0, 2200),
+(42, 201778, 0, 2300),
+(44, 201780, 0, 55),
+(45, 201781, 0, 120),
+(46, 201782, 0, 70),
+(47, 201783, 0, 100),
+(48, 201784, 0, 70),
+(49, 201785, 0, 70),
+(50, 201786, 0, 24),
+(51, 201787, 0, 25),
+(52, 201788, 0, 120),
+(53, 201789, 0, 180),
+(54, 201790, 0, 120),
+(55, 201791, 0, 1800),
+(56, 201792, 0, 2600),
+(57, 201793, 0, 2000),
+(58, 201794, 0, 5800),
+(59, 201795, 0, 2000),
+(60, 201796, 0, 2400),
+(61, 201797, 0, 3500);
 
 -- --------------------------------------------------------
 
@@ -343,28 +335,6 @@ CREATE TABLE `tblautonumber` (
 INSERT INTO `tblautonumber` (`ID`, `AUTOSTART`, `AUTOINC`, `AUTOEND`, `AUTOKEY`, `AUTONUM`) VALUES
 (1, '2017', 1, 98, 'PROID', 10),
 (2, '0', 1, 106, 'ordernumber', 0);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `tblsetting`
---
-
-CREATE TABLE `tblsetting` (
-  `SETTINGID` int(11) NOT NULL,
-  `PLACE` text NOT NULL,
-  `BRGY` varchar(90) NOT NULL,
-  `DELPRICE` double NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Déchargement des données de la table `tblsetting`
---
-
-INSERT INTO `tblsetting` (`SETTINGID`, `PLACE`, `BRGY`, `DELPRICE`) VALUES
-(1, 'Kabankalan City', 'Brgy. 1', 50),
-(2, 'Himamaylan City', 'Brgy. 1', 70),
-(3, 'sfax', '', 6);
 
 -- --------------------------------------------------------
 
@@ -422,8 +392,7 @@ ALTER TABLE `client`
 ALTER TABLE `commande`
   ADD PRIMARY KEY (`SUMMARYID`),
   ADD UNIQUE KEY `ORDEREDNUM` (`ORDEREDNUM`),
-  ADD KEY `CUSTOMERID` (`CUSTOMERID`),
-  ADD KEY `USERID` (`USERID`);
+  ADD KEY `CUSTOMERID` (`CUSTOMERID`);
 
 --
 -- Index pour la table `lignecommande`
@@ -452,12 +421,6 @@ ALTER TABLE `promo`
 --
 ALTER TABLE `tblautonumber`
   ADD PRIMARY KEY (`ID`);
-
---
--- Index pour la table `tblsetting`
---
-ALTER TABLE `tblsetting`
-  ADD PRIMARY KEY (`SETTINGID`);
 
 --
 -- Index pour la table `wishlist`
@@ -510,12 +473,6 @@ ALTER TABLE `promo`
 --
 ALTER TABLE `tblautonumber`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT pour la table `tblsetting`
---
-ALTER TABLE `tblsetting`
-  MODIFY `SETTINGID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `wishlist`
