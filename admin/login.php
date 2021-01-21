@@ -7,11 +7,25 @@ require_once("../include/initialize.php");
   if(isset($_SESSION['USERID'])){
     redirect(web_root."admin/index.php");
   }
+
+ 
+ if (isset($_COOKIE["nbvisites"])){
+	$n=$_COOKIE["nbvisites"];
+	 if(isset($_POST["btnLogin"])){
+  		
+		   $n++;
+	 }
+ }
+ else{
+  $n=1;
+ }
+  setcookie("nbvisites",$n,time()+86400);
+ 
   ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login | Janobe </title>
+	<title>Login  </title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -62,6 +76,10 @@ require_once("../include/initialize.php");
 							<i class="fa fa-lock"></i>
 						</span>
 					</div>
+					
+					<div class="panel-heading">
+						visites number <?php echo "$n";?>
+					</div>
 
 					<div class="container-login100-form-btn p-t-10">
 						<button  type="submit" name="btnLogin"  class="login100-form-btn">
@@ -103,7 +121,7 @@ if(isset($_POST['btnLogin'])){
       redirect("login.php");
          
     } else {  
-  //it creates a new objects of member
+    //it creates a new objects of member
     $user = new User();
     //make use of the static function, and we passed to parameters
     $res = $user::userAuthentication($email, $h_upass);

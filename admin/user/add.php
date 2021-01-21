@@ -75,7 +75,7 @@
                           <option value="Administrator"  >Administrator</option>
                           <option value="Staff"  >Staff</option> 
                           <!-- <option value="Customer">Customer</option> -->
-                          <option value="Encoder" >Encoder</option>
+                      
                         </select> 
                       </div>
                     </div>
