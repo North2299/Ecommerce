@@ -78,7 +78,7 @@
                           <option value="Administrator"  <?php echo ($singleuser->U_ROLE=='Administrator') ? 'selected="true"': '' ; ?>>Administrator</option>
                           <option value="Staff" <?php echo ($singleuser->U_ROLE=='Staff') ? 'selected="true"': '' ; ?>>Staff</option> 
                           <!-- <option value="Customer">Customer</option> -->
-                          <option value="Encoder" <?php echo ($singleuser->U_ROLE=='Encoder') ? 'selected="true"': '' ; ?>>Encoder</option>
+                         
                         </select> 
                       </div>
                     </div>
